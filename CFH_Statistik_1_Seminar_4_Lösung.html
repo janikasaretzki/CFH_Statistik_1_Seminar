@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Einheit 4</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Janika Saretzki" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#EE0071"],"pen_size":4,"eraser_size":40,"palette":[]}) })</script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+name: 1
+class: middle, left
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# Statistik 1
+## Seminar
+***
+### Einheit 4
+##### 26.06.2025 | Janika Saretzki, MSc. 
+
+---
+name: 2
+class: top, left
+
+### Termine
+&lt;br&gt;&lt;br&gt;
+~~**Einheit 1  02.05.25  14:45-16:15 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+~~**Einheit 2  15.05.25  13:05-15:30 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+&lt;br&gt;
+~~**Einheit 3**  12.06.25  13:05-15:30 Uhr  A    HS P5 005~~  
+~~**Einheit 3**  13.06.25  13:50-16:15 Uhr  B    HS P1 105~~&lt;br&gt;
+&lt;br&gt;
+**Einheit 4**  26.06.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 4**  27.06.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt; 
+&lt;br&gt;
+**Einheit 5**  17.07.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 5**  18.07.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt;
+
+---
+name: 3
+class: top, left
+
+### Termine
+&lt;br&gt;&lt;br&gt;
+~~**Einheit 1  02.05.25  14:45-16:15 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+~~**Einheit 2  15.05.25  13:05-15:30 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+&lt;br&gt;
+~~**Einheit 3**  12.06.25  13:05-15:30 Uhr  A    HS P5 005~~  
+~~**Einheit 3**  13.06.25  13:50-16:15 Uhr  B    HS P1 105~~&lt;br&gt;
+&lt;br&gt;
+**Einheit 4**  26.06.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 4**  27.06.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt; 
+&lt;br&gt;
+**Einheit 5**  17.07.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 5**  18.07.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt;
+&lt;br&gt;
+**Tutorium  21.07.25  10:00-15:30 Uhr  A + B  HS Audimax / P3**&lt;br&gt;
+**Tutorium  22.07.25  10:00-15:30 Uhr  B + B  HS Audimax / P3**&lt;br&gt; 
+
+---
+name: 4
+class: top, left, smaller
+
+### Recap
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Boxplot&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+Ein Boxplot visualisiert die Verteilung zumindest ordinal skalierter Daten. Um einen Boxplot zu zeichnen, &lt;strong&gt;werden zunächst Median, das erste (Q1) und das dritte Quartil (Q3) berechnet.&lt;/strong&gt; Diese drei Werte bilden die sogenannte Box. Der Interquartilsabstand (IQR) ergibt sich aus Q3 minus Q1 und beschreibt die Streubreite der mittleren 50% der Daten. &lt;strong&gt;An die Box schließen sich sogenannte Whisker an.&lt;/strong&gt; Sie reichen jeweils bis zum letzten Datenpunkt, der noch innerhalb des Bereichs von Q1 - 1,5 x IQR bzw. Q3 + 1,5 x IQR liegt. Werte, die außerhalb dieser Grenzen liegen, gelten als Ausreißer und werden im Plot als einzelne Punkte (oder Sternchen) dargestellt.
+&lt;br&gt;&lt;br&gt;
+Ein Boxplot zeigt damit auf kompakte Weise die zentrale Tendenz, die Streuung und potenzielle Ausreißer - und eignet sich besonders gut, um mehrere Gruppen miteinander zu vergleichen.
+
+---
+name: 5
+class: top, left, smaller
+
+### Recap
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Boxplot&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+Ein Dozent hat die Ergebnisse einer Statistik-Klausur in einem Kurs mit 12 Teilnehmenden erfasst. Die erreichten Punktzahlen liegen im Bereich von 0 bis 100. Der Median beträgt 75,0, das erste Quartil 72,5, das dritte Quartil 85,5&lt;br&gt;
+&lt;br&gt;
+Daten (in Punkten): 58, 67, 71, 73, 74, 74, 76, 87, 80, 84, 88, 92
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;&lt;u&gt;Aufgabe:&lt;/u&gt; Bestimmen Sie den Interquartilsabstand (IQR) und etwaige Ausreißer. Zeichnen Sie zudem einen Boxplot und beschriften dabei die Achsen sinnvoll.&lt;/strong&gt;
+
+---
+name: 6
+class: top, left, smaller
+
+### Recap - Lösung
+&lt;div style="flex: 1.4; font-size: 0.95em; line-height: 1.5; color: green;"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Die Daten sind bereits sortiert, d.h. in Form einer geordneten Urliste vorliegend. Wir kennen zudem den Median (Mdn = 75,0), das erste Quartil (Q1 = 72,5) und das dritte Quartil (Q3 = 85,5).
+&lt;br&gt;&lt;br&gt;
+1. Berechnung des Interquartilsabstandes: IQR = Q3 - Q1 = 85,5 - 72,5 = 13,0&lt;br&gt;
+2. Berechnung der potenziellen Länge der Whisker: &lt;ul&gt;
+  &lt;li&gt;Unterer Whisker von Q1 bis Q1 – 1,5 × IQR, d.h. von 72,5 bis 72,5 – 1,5 × 13,0 = 53,0&lt;/li&gt;
+  &lt;li&gt;Oberer Whisker: von Q3 bis Q3 + 1,5 × IQR, d.h. von 85,5 bis 85,5 + 1,5 × 13,0 = 105,0&lt;/li&gt;
+&lt;/ul&gt;&lt;br&gt;
+3. Ausreißer identifizierten: Beobachtete Werte reichen von 58 bis 92, d.h. kein Wert &lt; 53,0 und kein Wert &gt; 105,0. &lt;br&gt;&lt;u&gt;Es sind daher keine Ausreißer vorhanden!&lt;/u&gt;
+&lt;/ul&gt;&lt;br&gt;
+&lt;/div&gt;
+
+---
+name: 7
+class: top, left, smaller
+
+### Recap - Lösung
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_4_Lösung_files/figure-html/Recap-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+name: 8
+class: top, left, smaller
+
+### Wiederholung
+
+&lt;strong&gt;Logik des Schließens von Stichprobe auf Population&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div style="display: flex; justify-content: center;"&gt;
+  &lt;img src="Einheit_5.png" style="width: 35%;"&gt;
+&lt;/div&gt;
+
+---
+name: 9
+class: top, left, smaller
+
+### Wiederholung
+
+&lt;strong&gt;Logik des Schließens von Stichprobe auf Population&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div style="display: flex; justify-content: center;"&gt;
+  &lt;img src="Einheit_5.png" style="width: 35%;"&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="text-align: center; font-size: 90%;"&gt;
+&lt;strong&gt;Schätzwert =&lt;/strong&gt; Wert, von dem wir auf Basis unserer Stichprobe davon ausgehen, dass er "möglichst nahe" an dem wahren Parameterwert bzw. dem wahren Wert der Maßzahl in der Population liegt &lt;strong&gt;(x̄ und s als Schätzwerte für die Population)&lt;/strong&gt;
+&lt;/div&gt;
+
+---
+name: 10
+class: top, left, smaller
+
+### Wiederholung
+&lt;div style="text-align: center;"&gt;
+  &lt;img src="Schätzungen_Stichprobenfehler.png" style="width:60%;"&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="text-align: center; font-size: 90%;"&gt;
+Die Genauigkeit der Schätzung hängt von der Streuung der Stichprobenkennwerteverteilung ab. Diese Streuung ist die Standardabweichung der Schätzfunktion und wird &lt;strong&gt;Standardfehler&lt;/strong&gt; genannt.
+&lt;/div&gt;
+&lt;br&gt;
+$$
+\small
+\sigma_{\bar{x}} = \sqrt{\frac{\sigma_x^2}{n}} = \frac{\sigma_x}{\sqrt{n}}
+$$
+
+---
+name: 11
+class: top, left, smaller
+
+### Wiederholung
+&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_4_Lösung_files/figure-html/Dataframe 1-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+&lt;div style="text-align: center; font-size: 90%;"&gt;
+&lt;strong&gt;Computersimulation einer Stichprobenkennwerteverteilung mit der Stichprobengröße n = 10&lt;/strong
+&lt;br&gt;&lt;br&gt;
+Theoretische Kennwerte: µ = 40,00, σ = 3,16, n = 10; Empirische Kennwerte: x̄ =  4,12, σ = 3,21, n = 10, a = 25.000
+&lt;/div&gt;
+
+---
+name: 12
+class: top, left, smaller
+
+### Wiederholung
+&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align: center; font-size: 90%;"&gt;
+Ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; ist ein auf Stichprobendaten basierendes Intervall, das bei wiederholter Ziehung in einem festgelegten Anteil der Fälle (z.B. 95%) den wahren Wert des Populationsparameters enthalten würde.
+&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div style="display: flex; justify-content: center;"&gt;
+  &lt;img src="Konfidenzintervall.png" style="width: 40%;"&gt;
+&lt;/div&gt;
+
+---
+name: 13
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 14
+class: top, left, smaller
+
+### Wiederholung
+&lt;br&gt;
+&lt;div style="text-align: left; font-size: 90%; line-height: 1.6;"&gt;
+
+&lt;strong&gt;Wie lese ich die Tabelle?&lt;/strong&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;strong&gt;Erster Schritt&lt;/strong&gt;&lt;br&gt;
+  • Berechne den Wert (d.h. das benötigte Quantil) von 1 - α/2 (zweiseitiges Konfidenzintervall) bzw. 1 - α (einseitiges Konfidenzintervall)&lt;br&gt;
+  • Bestimme die Freiheitsgrade: n - 1
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;strong&gt;Zweiter Schritt&lt;/strong&gt;&lt;br&gt;
+  • In der ersten Spalte stehen die Freiheitsgrade (df)&lt;br&gt;
+  • In der ersten Zeile stehen die Werte von  1 - α/2 (zweiseitiges Konfidenzintervall) bzw. 1 - α (einseitiges Konfidenzintervall)&lt;br&gt;
+  &lt;br&gt;
+  • &lt;strong&gt;Die Zelle, in der sich beide schneiden, enthält den gesuchten t-Wert&lt;/strong&gt;
+
+&lt;/div&gt;
+
+---
+name: 15
+class: top, left, smaller
+### Übungsaufgabe 1
+
+Eine Psychologin interessiert sich für das Stresslevel von Universitätsstudierenden. Sie verwendet eine Skala von 0 bis 100, wobei 0 für "kein Stress" und 100 für "extremen Stress" steht. Dazu erhebt sie eine Stichprobe von 30 Studierenden. Die gemessenen Stresswerte ergeben im Durchschnitt einen Wert von 75, mit einer Standardabweichung von 12. Sie möchte nun Rückschlüsse auf das Stresslevel aller Universitätsstudierenden ziehen.
+
+a) Welche Werte aus dem Text entsprechen den folgenden statistischen Kennwerten:  
+$$
+\mu,\ \sigma,\ \bar{x},\ s
+$$
+
+b) Berechnen Sie den **Standardfehler des Mittelwerts**. Was sagt dieser aus, und wovon hängt er ab?
+
+c) Geben Sie die Formel für das **95%-Konfidenzintervall** an und berechnen Sie es.
+
+---
+name: 16
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+Eine Psychologin interessiert sich für das Stresslevel von Universitätsstudierenden. Sie verwendet eine Skala von 0 bis 100, wobei 0 für "kein Stress" und 100 für "extremen Stress" steht. Dazu erhebt sie eine Stichprobe von 30 Studierenden. Die gemessenen Stresswerte ergeben im Durchschnitt einen Wert von 75, mit einer Standardabweichung von 12. Sie möchte nun Rückschlüsse auf das Stresslevel aller Universitätsstudierenden ziehen.
+
+a) Welche Werte aus dem Text entsprechen den folgenden statistischen Kennwerten:  
+$$
+\mu,\ \sigma,\ \bar{x},\ s
+$$
+&lt;div style="flex: 1.4; font-size: 0.90em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;x̄ = 75 (durchschnittliches Stresslevel in der Stichprobe)&lt;/li&gt;
+    &lt;li&gt;s = 12 (Streuung des Stresslevels in der Stichprobe, Stichprobenstandardabweichung)&lt;/li&gt;
+    &lt;br&gt;
+    &lt;li&gt;µ (durchschnittliches Stresslevel in der Population): unbekannt&lt;/li&gt;
+    &lt;li&gt;σ (Streuung des Stresslevels in der Population, Populationsstandardabweichung): unbekannt&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;br&gt;
+&lt;div style="text-align: center;"&gt;
+→ Stichproben- vs. Populationsebene&lt;br&gt;
+→ Wir verwenden x̄ und s als Schätzwerte für µ und σ
+&lt;/div&gt;&lt;/div&gt;
+
+---
+name: 17
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+Eine Psychologin interessiert sich für das Stresslevel von Universitätsstudierenden. Sie verwendet eine Skala von 0 bis 100, wobei 0 für "kein Stress" und 100 für "extremen Stress" steht. Dazu erhebt sie eine Stichprobe von 30 Studierenden. Die gemessenen Stresswerte ergeben im Durchschnitt einen Wert von 75, mit einer Standardabweichung von 12. Sie möchte nun Rückschlüsse auf das Stresslevel aller Universitätsstudierenden ziehen.
+
+b) Berechnen Sie den **Standardfehler des Mittelwerts**. Was sagt dieser aus, und wovon hängt er ab?
+
+&lt;div style="flex: 1.4; font-size: 0.90em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+
+$$
+\small
+\text{Standardabweichung der Stichprobenmittelwerte: } \sigma_{\bar{x}} = \sqrt{ \frac{\sigma_x^2}{n} } = \frac{\sigma_x}{\sqrt{n}}
+$$
+Der Standardfehler gibt an, wie stark der Mittelwert aus der Stichprobe typischerweise vom wahren Populationsmittelwert abweicht – also wie präzise die Schätzung ist. Er wird durch a) die Streuung der Messwerte in der Population/Stichprobenkennwerteverteilung und b) die Stichprobengröße beeinflusst (siehe Formel).
+&lt;br&gt;
+Der Standardfehler ist umso kleiner, je a) kleiner die Streuung ist und b) größer die Stichprobe ist.
+
+$$
+\small
+\text{In der Praxis: Verwendung der empirischen Standardabweichung (= Stichprobenebene) }
+$$
+$$
+\small
+\sigma_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{12}{\sqrt{30}} = 2,19
+$$
+&lt;/div&gt;
+
+---
+name: 18
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+Eine Psychologin interessiert sich für das Stresslevel von Universitätsstudierenden. Sie verwendet eine Skala von 0 bis 100, wobei 0 für "kein Stress" und 100 für "extremen Stress" steht. Dazu erhebt sie eine Stichprobe von 30 Studierenden. Die gemessenen Stresswerte ergeben im Durchschnitt einen Wert von 75, mit einer Standardabweichung von 12. Sie möchte nun Rückschlüsse auf das Stresslevel aller Universitätsstudierenden ziehen.
+
+c) Geben Sie die Formel für das **95%-Konfidenzintervall** an und berechnen Sie es.
+
+&lt;div style="flex: 1.4; font-size: 0.85em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+Die Populationsvarianz ist nicht bekannt, daher: Verwendung der t-Verteilung!
+
+$$
+\small
+\mu_{1,2} = \bar{x} \pm t_{1 - \alpha/2} \cdot \frac{\hat{\sigma}}{\sqrt{n}}
+$$
+
+$$
+\small
+df = n - 1
+$$
+Werte einsetzen:
+
+$$
+\small
+t_{1 - \alpha/2} = t_{1 - 0,05/2} = t_{0,975}
+$$
+
+$$
+\small
+df = 30 - 1 = 29
+$$
+
+... mit diesen Werten werfen wir nun einen Blick in die t-Tabelle!
+&lt;/div&gt;
+
+---
+name: 19
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+Eine Psychologin interessiert sich für das Stresslevel von Universitätsstudierenden. Sie verwendet eine Skala von 0 bis 100, wobei 0 für "kein Stress" und 100 für "extremen Stress" steht. Dazu erhebt sie eine Stichprobe von 30 Studierenden. Die gemessenen Stresswerte ergeben im Durchschnitt einen Wert von 75, mit einer Standardabweichung von 12. Sie möchte nun Rückschlüsse auf das Stresslevel aller Universitätsstudierenden ziehen.
+
+c) Geben Sie die Formel für das **95%-Konfidenzintervall** an und berechnen Sie es.
+
+&lt;div style="flex: 1.4; font-size: 0.85em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+
+$$
+\small
+\mu_{1,2} = 75 \pm 2,045 \cdot \frac{12}{\sqrt{30}}
+$$
+
+$$
+\small
+\mu_{1} = 70,52
+$$
+
+$$
+\small
+\mu_{2} = 79,48
+$$
+
+Auf Basis unserer Stichprobe ergibt sich ein 95%-Konfidenzintervall von 70,52 bis 79,48.
+Dieses Intervall wurde so berechnet, dass es mit 95%iger Konfidenz den wahren Mittelwert der Population überdeckt.
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt; Wenn wir viele Stichproben ziehen und jeweils ein 95%-Konfidenzintervall berechnen, dann würden etwa 95% dieser Intervalle den wahren Populationsmittelwert einschließen.&lt;/strong&gt;
+&lt;/div&gt;
+
+---
+name: 20
+class: top, left, smaller
+### Übungsaufgabe 2
+
+Im Rahmen eines psychologischen Experiments wird die Rundenzeit einer Ratte in einem Parcours untersucht. In einer Trainingssession absolviert die Ratte 54 Runden. Die durchschnittliche Rundenzeit beträgt 17 Minuten und 30 Sekunden. Es wird angenommen, dass die Rundenzeiten normalverteilt sind, mit einer (Populations-)Varianz von 2,5 Minuten&lt;sup&gt;2&lt;/sup&gt;.
+
+Wie lautet das 90%-Konfidenzintervall für den Mittelwert der Rundenzeit?
+
+---
+name: 21
+class: top, left, smaller
+### Übungsaufgabe 2 - Lösung
+
+Im Rahmen eines psychologischen Experiments wird die Rundenzeit einer Ratte in einem Parcours untersucht. In einer Trainingssession absolviert die Ratte 54 Runden. Die durchschnittliche Rundenzeit beträgt 17 Minuten und 30 Sekunden. Es wird angenommen, dass die Rundenzeiten normalverteilt sind, mit einer (Populations-)Varianz von 2,5 Minuten&lt;sup&gt;2&lt;/sup&gt;.
+
+Wie lautet das 90%-Konfidenzintervall für den Mittelwert der Rundenzeit?
+
+&lt;div style="flex: 1.4; font-size: 0.85em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+
+$$
+\small
+\begin{array}{rl}
+\textbf{Gegeben ist:} &amp; \\
+n &amp; = 54 \\
+\bar{x} &amp; = 17{,}5 \, \text{min} \\
+\text{Populationsvarianz: } \sigma^2 &amp; = 2{,}5 \Rightarrow \sigma = \sqrt{2{,}5} = 1{,}58 \, \text{min} \\
+\text{Konfidenzniveau: } 90\% &amp; \Rightarrow \alpha = 0{,}10
+\end{array}
+$$
+
+
+
+&lt;br&gt;
+Die Populationsvarianz ist bekannt, daher: Verwendung der z-Verteilung!
+
+$$
+\small
+z_{1 - \alpha/2} = z_{1 - 0,10/2} = z_{0,95}
+$$
+
+$$
+\small
+\mu_{1,2} = \bar{x} \pm z_{1 - \alpha/2} \cdot \frac{{\sigma}}{\sqrt{n}}
+$$
+&lt;/div&gt;
+
+---
+name: 22
+class: top, left, smaller
+### Übungsaufgabe 2 - Lösung
+
+Im Rahmen eines psychologischen Experiments wird die Rundenzeit einer Ratte in einem Parcours untersucht. In einer Trainingssession absolviert die Ratte 54 Runden. Die durchschnittliche Rundenzeit beträgt 17 Minuten und 30 Sekunden. Es wird angenommen, dass die Rundenzeiten normalverteilt sind, mit einer (Populations-)Varianz von 2,5 Minuten&lt;sup&gt;2&lt;/sup&gt;.
+
+Wie lautet das 90%-Konfidenzintervall für den Mittelwert der Rundenzeit?
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Beachte: Beim Nachschlagen in der t-Tabelle sucht man den kritischen t-Wert anhand der Freiheitsgrade (df) und dem gewünschten Konfidenzniveaus. &lt;u&gt; In der z-Tabelle hingegen sucht man die Fläche (bzw. Wahrscheinlichkeit) unter der Normalverteilung und liest dazu den passenden z-Wert ab.&lt;/u&gt;
+&lt;br&gt;&lt;br&gt;
+→ Fläche: 0,9495 (bzw. 0,9505)&lt;br&gt;
+→ z-Wert: 1,64 oder 1,65 (beides wäre richtig)
+
+$$
+\small
+\mu_{1,2} = 17,5 \pm 1,64 \cdot \frac{{1,58}}{\sqrt{54}}
+$$
+$$
+\small
+\mu_{1} = 17,15
+$$
+
+$$
+\small
+\mu_{2} = 17,85
+$$
+Auf Basis der Stichprobe ergibt sich ein 90%-Konfidenzintervall von 17,15 bis 17,85. Das bedeutet: Wir gehen mit 90% Konfidenz davon aus, dass der wahre Mittelwert μ der Population innerhalb dieses Intervalls liegt.
+&lt;/div&gt;
+
+---
+name: 23
+class: top, left, smaller
+### Wiederholung
+Zur Durchführung eines Hypothesentests sind folgende Schritte notwendig:
+
+**1. Formulierung der Hypothesen:**
+$$
+\small
+H_0: \text{Kein Effekt} \\
+\small
+H_1: \text{Es liegt ein Effekt vor}
+$$
+
+**2. Auswahl der zugrunde liegenden Verteilung**
+
+**3. Festlegung von Annahme- und Ablehnungsbereich:** Bestimmung des kritischen Werts
+
+**4. Einordnung des Beobachtungswerts in die Verteilung**
+
+  - **Binomialverteilung**: Wahrscheinlichkeiten  
+  - **z-Verteilung**: Mittelwerte bei bekanntem σ 
+  - **t-Verteilung**: Mittelwerte bei unbekanntem σ
+  - **F-Verteilung**: Varianzvergleiche  
+  - **Chi-Quadrat-Verteilung**: Häufigkeiten / Proportionen
+
+**5. Vergleich von Teststatistik und kritischem Wert**
+
+**6. Entscheidung:** Test signifikant oder nicht signifikant
+&lt;/span&gt;
+
+---
+name: 24
+class: top, left, smaller
+
+### Wiederholung
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+&lt;strong&gt;&lt;u&gt;Ein-Stichproben Test für Mittelwerte&lt;/u&gt;&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;1. Hypothesenpaar&lt;/strong&gt;
+&lt;br&gt;
+Hypothese über µ einer normalverteilten Variable, wobei die Populationsvarianz bekannt ist
+&lt;br&gt;&lt;br&gt;
+
+Statistische Hypothesenpaare:
+&lt;/div&gt;
+
+&lt;div style="text-align: center;"&gt;
+  &lt;img src="Statistische_Hypothesenpaare.png" style="width:60%;"&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+&lt;strong&gt;2. Bestimmung einer zugrundeliegenden Verteilung&lt;/strong&gt;
+&lt;br&gt;
+&lt;li&gt;Wenn wir an Mittelwerten interessiert sind UND die Populationsvarianz bekannt ist: &lt;strong&gt;z-Verteilung&lt;/strong&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Wenn wir an Mittelwerten interessiert sind und die Populationsvarianz NICHT bekannt ist: &lt;strong&gt;t-Verteilung&lt;/strong&gt;&lt;/li&gt;&lt;/div&gt;
+---
+name: 25
+class: top, left, smaller
+
+### Wiederholung
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+&lt;strong&gt;3. Annahme- und Ablehnungsbereich der Nullhypothese&lt;/strong&gt;
+&lt;br&gt;&lt;/div&gt;
+
+![](Annahmebereich_Ablehnungsbereich_H0.png)
+
+
+&lt;div style="text-align: center; font-size: 90%;"&gt;
+Der kritische Wert wird in der Verteilungstabelle abgelesen:
+&lt;/div&gt;
+
+$$
+\small
+\text{Einseitiger Test:} \quad z_{\text{kritisch}} = 1 - {\alpha}
+$$
+
+$$
+\small
+\text{Zweiseitiger Test:} \quad z_{\text{kritisch}} = 1 - \frac{\alpha}{2}
+$$
+
+---
+name: 26
+class: top, left, smaller
+### Übungsaufgabe 3
+Ein Psychologe möchte untersuchen, ob Kinder mit jüngeren Geschwistern im Durchschnitt eine höhere Intelligenzleistung aufweisen als die Population aller Kinder. In einer Stichprobe von N = 225 Kindern mit jüngeren Geschwistern wird ein Mittelwert von x̄ = 101,8 beobachtet. Der Intelligenzquotient (IQ) unter Kindern gilt als normalverteilt mit einem Erwartungswert von µ = 100 und einer Standardabweichung von σ = 15.
+
+a) Handelt es sich bei der Fragestellung um eine gerichtete oder ungerichtete Hypothese? Formulieren Sie die inhaltliche und statistische Null- und Alternativhypothese entsprechend.&lt;br&gt;
+b) Angenommen, der Forscher hat das Signifikanzniveau vorab auf 5% festgelegt - zu welcher Entscheidung hinsichtlich der Nullhypothese kommt er?&lt;br&gt;
+c) Wie würde das Testergebnis ausfallen, wenn stattdessen ein ungerichteter Test auf dem 5%-Niveau durchgeführt würde?
+
+---
+name: 27
+class: top, left, smaller
+### Übungsaufgabe 3 - Lösung
+Ein Psychologe möchte untersuchen, ob Kinder mit jüngeren Geschwistern im Durchschnitt eine höhere Intelligenzleistung aufweisen als die Population aller Kinder. In einer Stichprobe von N = 225 Kindern mit jüngeren Geschwistern wird ein Mittelwert von x̄ = 101,8 beobachtet. Der Intelligenzquotient (IQ) unter Kindern gilt als normalverteilt mit einem Erwartungswert von µ = 100 und einer Standardabweichung von σ = 15.
+
+a) Handelt es sich bei der Fragestellung um eine gerichtete oder ungerichtete Hypothese? Formulieren Sie die inhaltliche und statistische Null- und Alternativhypothese entsprechend.&lt;br&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Es handelt sich um eine gerichtete Hypothese, da ein Richtungseffekt („höher“) angenommen wird.
+&lt;br&gt;&lt;br&gt;
+Inhaltliche Hypothesen:
+&lt;ul&gt;
+  &lt;li&gt;Nullhypothese (H₀): Es gibt keinen höheren IQ bei Kindern mit jüngeren Geschwistern im Vergleich zur Gesamtpopulation.&lt;/li&gt;
+  &lt;li&gt;Alternativhypothese (H₁): Kinder mit jüngeren Geschwistern haben einen höheren IQ als der Populationsmittelwert.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+Statistische Hypothesen:
+$$
+H_0: \mu \leq 100
+$$
+
+$$
+H_1: \mu &gt; 100
+$$
+
+&lt;/div&gt;
+
+---
+name: 28
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+Ein Psychologe möchte untersuchen, ob Kinder mit jüngeren Geschwistern im Durchschnitt eine höhere Intelligenzleistung aufweisen als die Population aller Kinder. In einer Stichprobe von N = 225 Kindern mit jüngeren Geschwistern wird ein Mittelwert von x̄ = 101,8 beobachtet. Der Intelligenzquotient (IQ) unter Kindern gilt als normalverteilt mit einem Erwartungswert von µ = 100 und einer Standardabweichung von σ = 15.
+
+b) Angenommen, der Forscher hat das Signifikanzniveau vorab auf 5% festgelegt - zu welcher Entscheidung hinsichtlich der Nullhypothese kommt er?
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+&lt;u&gt;Einstichproben z-Test:&lt;/u&gt; Es wird geprüft, ob der Mittelwert einer Grundgesamtheit von einem bestimmten Wert abweicht, in diesem Fall ob der beobachtete Stichprobenmittelwert (signifikant) größer ist als der erwartete Populationsmittelwert.&lt;br&gt;
+Wir berechnen also den empirischen z-Wert (die Teststatistik) auf Basis der Stichprobe und vergleichen diesen mit dem kritischen z-Wert, der dem gewählten Signifikanzniveau entspricht. Liegt der empirische z-Wert im Ablehnungsbereich, wird die Nullhypothese verworfen.
+
+$$
+\small
+z_{\text{emp}} = \sqrt{n} \cdot \frac{ \bar{x} - \mu_0 }{ \sigma }
+$$
+
+$$
+\small
+z_{\text{emp}} = \sqrt{225} \cdot \frac{ {101,8} - 100 }{ 15 } = 1,8
+$$
+
+&lt;/div&gt;
+
+---
+name: 29
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+Ein Psychologe möchte untersuchen, ob Kinder mit jüngeren Geschwistern im Durchschnitt eine höhere Intelligenzleistung aufweisen als die Population aller Kinder. In einer Stichprobe von N = 225 Kindern mit jüngeren Geschwistern wird ein Mittelwert von x̄ = 101,8 beobachtet. Der Intelligenzquotient (IQ) unter Kindern gilt als normalverteilt mit einem Erwartungswert von µ = 100 und einer Standardabweichung von σ = 15.
+
+b) Angenommen, der Forscher hat das Signifikanzniveau vorab auf 5% festgelegt - zu welcher Entscheidung hinsichtlich der Nullhypothese kommt er?
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Bei einem Signifikanzniveau von 5% und rechtsseitiger Testung ist der kritische z-Wert 1,64, denn:
+
+$$
+\small
+z_{\text{krit}} = z_{1 - \alpha} = z_{1 - 0,05} = z_{0,95}
+$$
+
+$$
+\small
+z_{0,95} = 1,64
+$$
+
+$$
+\small
+1,8 &gt; 1,64
+$$
+
+Der empirische z-Wert liegt im Ablehnungsbereich der Nullhypothese – der kritische z-Wert markiert die Schwelle, ab der ein Ergebnis unter der Annahme der Nullhypothese als sehr unwahrscheinlich gilt.
+Ist in diesem Fall - entsprechend der Hypothese - die Bedingung ...
+
+$$
+z_{\text{emp}} &gt; z_{\text{krit}}
+$$
+
+... erfüllt, betrachten wir den beobachteten Effekt als statistisch signifikant. Die Nullhypothese wird verworfen, da das Ergebnis nicht mehr mit bloßem Zufall erklärbar erscheint. Der Forscher würde daraus schließen, dass Kinder mit jüngeren Geschwistern im Mittel eine höhere Intelligenzleistung aufweisen als Kinder in der Gesamtpopulation.
+&lt;/div&gt;
+
+---
+&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_4_Lösung_files/figure-html/Dataframe 2-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+name: 30
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+Ein Psychologe möchte untersuchen, ob Kinder mit jüngeren Geschwistern im Durchschnitt eine höhere Intelligenzleistung aufweisen als die Population aller Kinder. In einer Stichprobe von N = 225 Kindern mit jüngeren Geschwistern wird ein Mittelwert von x̄ = 101.8 beobachtet. Der Intelligenzquotient (IQ) unter Kindern gilt als normalverteilt mit einem Erwartungswert von µ = 100 und einer Standardabweichung von σ = 15.
+
+c) Wie würde das Testergebnis ausfallen, wenn stattdessen ein ungerichteter Test auf dem 5%-Niveau durchgeführt würde?
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+Bei einem Signifikanzniveau von 5% und zweiseitiger Testung ergibt sich folgender kritischer z-Wert:
+$$
+\small
+z_{\text{krit}} = z_{1 - \frac{\alpha}{2}} = z_{1 - 0{,}025} = z_{0{,}975} \approx \pm 1{,}96
+$$
+... das bedeutet: Jeweils 2,5% Irrtumswahrscheinlichkeit liegen in den beiden äußeren Bereichen der Normalverteilung.&lt;br&gt;
+&lt;br&gt;
+Erinnerung:
+
+$$
+\small
+z_{\text{emp}} = 1,8
+$$
+$$
+\small
+1,8 &lt; 1,96
+$$
+Würde es sich um einen zweiseitigen Test handeln, läge der empirische Wert nicht im Ablehnungsbereich. Die Nullhypothese würde beibehalten, da das Ergebnis nicht signifikant ist. Der Forscher würde also keinen belegbaren Unterschied zur Gesamtpopulation feststellen.
+&lt;/div&gt;
+
+---
+
+&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_4_Lösung_files/figure-html/Dataframe 3-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+name: 31
+class: top, left, smaller
+
+### z-Tabelle
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="z_Tabelle_2.png" style="max-width: 60%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 32
+class: top, left, smaller
+
+### Möglichkeit der Visualisierung
+
+&lt;img src="CFH_Statistik_1_Seminar_4_Lösung_files/figure-html/Dataframe 4-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "slideNumberFormat": "%current%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Einheit 5</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Janika Saretzki" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#EE0071"],"pen_size":4,"eraser_size":40,"palette":[]}) })</script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+name: 1
+class: middle, left
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# Statistik 1
+## Seminar
+***
+### Einheit 5
+##### 18.07.2025 | Janika Saretzki, MSc. 
+
+---
+name: 2
+class: top, left
+
+### Termine
+&lt;br&gt;&lt;br&gt;
+~~**Einheit 1  02.05.25  14:45-16:15 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+~~**Einheit 2  15.05.25  13:05-15:30 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+&lt;br&gt;
+~~**Einheit 3**  12.06.25  13:05-15:30 Uhr  A    HS P5 005~~  
+~~**Einheit 3**  13.06.25  13:50-16:15 Uhr  B    HS P1 105~~&lt;br&gt;
+&lt;br&gt;
+~~**Einheit 4**  26.06.25  13:20-15:45 Uhr  A    HS P5 005~~  
+~~**Einheit 4**  27.06.25  13:50-16:15 Uhr  B    HS P1 105~~&lt;br&gt; 
+&lt;br&gt;
+**Einheit 5**  17.07.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 5**  18.07.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt;
+&lt;br&gt;
+**Tutorium  21.07.25  10:00-15:30 Uhr  A + B  HS Audimax / P3**&lt;br&gt;
+**Tutorium  22.07.25  10:00-15:30 Uhr  B + B  HS Audimax / P3**&lt;br&gt; 
+
+---
+name: 3
+class: top, left smaller
+
+### Klausur
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+&lt;strong&gt;Bearbeitungszeit: 90 Minuten &lt;/strong&gt;&lt;br&gt;
+&lt;div style="margin-left: 20px; margin-top: 10px;"&gt;
+  &lt;div&gt;- &lt;strong&gt;1/3&lt;/strong&gt; Multiple-Choice-Fragen&lt;/div&gt;
+  &lt;div&gt;- &lt;strong&gt;2/3&lt;/strong&gt; Rechenaufgaben&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+&lt;strong&gt;Erlaubte Hilfsmittel:&lt;/strong&gt; Nicht-programmierbarer Taschenrechner, Gestellte Formelsammlung (inkl. Verteilungstabellen), Selbst erstelltes Din-A4-Blatt (einseitig handgeschrieben), Geodreieck/Lineal, Schreibzeug (Kugelschreiber, Bleistift etc.)
+
+---
+name: 4
+class: top, left smaller
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p style="text-align: center;"&gt;
+  &lt;img src="Notenschlüssel.png" style="width: 80%;"&gt;
+&lt;/p&gt;
+---
+name: 5
+class: top, left smaller
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div style="display: flex; justify-content: center; align-items: flex-start; gap: 2%;"&gt;
+  &lt;img src="Statistiktrainer.png" style="width: 30%;"&gt;
+  &lt;img src="Übungsaufgaben.png" style="width: 70%;"&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="text-align: center; margin-top: 1em; font-size: 90%;"&gt;
+  &lt;a href="https://daze02-stephan-goerigk.shinyapps.io/Statistik_trainer/" target="_blank"&gt;
+    &lt;strong&gt;Statistiktrainer,&lt;/strong&gt;
+  &lt;/a&gt; 
+  &lt;a href="https://daze02-stephan-goerigk.shinyapps.io/QM1_CFH/#section-willkommen" target="_blank"&gt;
+   &lt;strong&gt;Übungsaufgaben&lt;/strong&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+---
+name: 6
+class: top, left, smaller
+### Wiederholung
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+Zur Durchführung eines Hypothesentests sind folgende Schritte notwendig:
+
+&lt;br&gt;
+**1. Formulierung der Hypothesen:**
+$$
+\small
+H_0: \text{Kein Effekt} \\
+\small
+H_1: \text{Es liegt ein Effekt vor}
+$$
+
+**2. Auswahl der zugrunde liegenden Verteilung**
+
+**3. Festlegung von Annahme- und Ablehnungsbereich:** Bestimmung des kritischen Werts
+
+**4. Einordnung des Beobachtungswerts in die Verteilung**
+
+  - **Binomialverteilung**: Wahrscheinlichkeiten  
+  - **z-Verteilung**: Mittelwerte bei bekanntem σ 
+  - **t-Verteilung**: Mittelwerte bei unbekanntem σ
+  - **F-Verteilung**: Varianzvergleiche  
+  - **Chi-Quadrat-Verteilung**: Häufigkeiten / Proportionen
+
+**5. Vergleich von Teststatistik und kritischem Wert**
+
+**6. Entscheidung:** Test signifikant oder nicht signifikant
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 7
+class: top, left, smaller
+
+### Wiederholung
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+&lt;strong&gt;&lt;u&gt;Ein-Stichproben Test für Mittelwerte&lt;/u&gt;&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Hypothesenpaar&lt;/strong&gt;
+&lt;br&gt;
+Hypothese über µ einer normalverteilten Variable, wobei die Populationsvarianz bekannt ist
+&lt;br&gt;&lt;br&gt;
+
+Statistische Hypothesenpaare:
+&lt;/div&gt;
+
+&lt;div style="text-align: center;"&gt;
+  &lt;img src="Statistische_Hypothesenpaare.png" style="width:60%;"&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="text-align: left; font-size: 90%;"&gt;
+&lt;strong&gt;Bestimmung einer zugrundeliegenden Verteilung&lt;/strong&gt;
+&lt;br&gt;
+&lt;li&gt;Wenn wir an Mittelwerten interessiert sind UND die Populationsvarianz bekannt ist: &lt;strong&gt;z-Verteilung&lt;/strong&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Wenn wir an Mittelwerten interessiert sind und die Populationsvarianz NICHT bekannt ist: &lt;strong&gt;t-Verteilung&lt;/strong&gt;&lt;/li&gt;&lt;/div&gt;
+
+---
+name: 8
+class: center, middle
+
+
+
+&lt;img src="CHEAT-SHEET_t-Test_page1.png" width="80%" /&gt;
+
+---
+name: 9
+class: center, middle
+
+&lt;img src="CHEAT-SHEET_t-Test_page2.png" width="80%" /&gt;
+---
+name: 10
+class: top, left, smaller
+
+### Übungsaufgabe 1 
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+a) Formulieren Sie die statistischen Hypothesen, um die Herstellerangabe zu überprüfen.&lt;br&gt;
+b) Entscheiden Sie, welcher Testtyp für diese Fragestellung angemessen ist.&lt;br&gt;
+c) Berechnen Sie den empirischen Testwert auf Basis der Stichprobendaten.&lt;br&gt;
+d) Bestimmen Sie den kritischen Wert für ein Signifikanzniveau von 5%.&lt;br&gt;
+e) Treffen Sie auf Basis der Ergebnisse eine Schlussfolgerung.
+
+&lt;/div&gt;
+
+---
+name: 11
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+a) Formulieren Sie die statistischen Hypothesen, um die Herstellerangabe zu überprüfen.&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.85em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+
+$$
+\small
+H_0: \mu \geq \mu_0 \Rightarrow H_0: \mu \geq 200
+$$
+
+
+$$
+\small
+H_1: \mu &lt; \mu_0 \Rightarrow H_1: \mu &lt; 200
+$$
+
+... das bedeutet inhaltlich (nach Aufgabenstellung nicht gefordert, aber sinnvoll, sich zu überlegen): Die mittlere Füllmenge ist größer oder gleich der Herstellerangabe von 200g (Nullhypothese); Die mittlere Füllmenge ist kleiner als die Herstellerangabe von 200g (Alternativhypothese; das ist der Verdacht, den wir testen).
+
+&lt;/div&gt;
+
+---
+name: 12
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+b) Entscheiden Sie, welcher Testtyp für diese Fragestellung angemessen ist.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.85em; line-height: 1.5; color: green; margin-top: 40px;"&gt;
+Ein (einseitiger) Ein-Stichproben t-Test ist angemessen, da nur eine Stichprobe betrachtet wird, lediglich die empirische Standardabweichung gegeben ist und ein gerichteter Test auf "weniger als 200 g" durchgeführt werden soll. Formel:
+
+$$
+\small
+t = \frac{\bar{x} - \mu}{\frac{\hat{\sigma}}{\sqrt{n}}} \sim t_{n-1}
+$$
+
+$$
+\small
+\text{... wobei } t \text{ t‑verteilt ist mit } (n-1)\ \text{Freiheitsgraden, also } t_{n-1}.
+$$
+
+&lt;/div&gt;
+
+---
+name: 13
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+c) Berechnen Sie den empirischen Testwert auf Basis der Stichprobendaten.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+1. Schritt: Berechnung des Mittelwerts
+
+$$
+\small
+\bar{x} = \frac{200{,}3 + 184{,}8 + 192{,}2 + \dots + 192{,}0}{20} = 195{,}44
+$$
+
+2. Schritt: Berechnung der Teststatistik
+
+$$
+\small
+t = \frac{\bar{x} - \mu}{\frac{\hat{\sigma}}{\sqrt{n}}} \sim t_{n-1} \Rightarrow t = \frac{195{,}44\ - 200\,\text{}}{\frac{7{,}28\,\text{}}{\sqrt{20}}} = -2{,}801
+$$
+&lt;/div&gt;
+
+---
+name: 14
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+d) Bestimmen Sie den kritischen Wert für ein Signifikanzniveau von 5%.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+1. Schritt: Bestimme die Freiheitsgrade:
+$$
+\small
+df = n - 1 = 20 - 1 = 19 \quad
+$$
+
+2. Schritt: Wiederholung der statistischen Hypothese, die wir testen:
+
+
+$$
+\small
+H_1: \mu &lt; 200
+$$
+Das bedeutet: Wir testen, ob der empirische Mittelwert &lt;u&gt;signifikant unter dem Referenzwert liegt.&lt;/u&gt; Das Signifikanzniveau ist 0,05.
+&lt;/div&gt;
+
+---
+name: 15
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+d) Bestimmen Sie den kritischen Wert für ein Signifikanzniveau von 5%.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+&lt;br&gt;
+3. Schritt: Nutze die t-Tabelle zur Bestimmung des kritischen Werts&lt;br&gt;
+Wir testen linksseitig (Verdacht, dass systematisch &lt;u&gt;weniger&lt;/u&gt; abgefüllt wird)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Ein Alpha von 0,05 können wir nicht in der Tabelle ablesen und nutzen daher die Gegenwahrscheinlichkeit 1 - Alpha, d.h. 1 - 0,05 = 0,95 (kritischer Wert für das 95%-Quantil):
+
+$$
+\small
+\Rightarrow \quad t_\text{kritisch} = t_{(0{,}95; 19)} = 1{,}729
+$$
+$$
+\small
+\Rightarrow \quad t_\text{kritisch} = t_{(0{,}05; \, df = 19)} = -1{,}729
+$$
+&lt;/div&gt;
+---
+name: 16
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle_5_1.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 17
+class: top, left, smaller
+
+### Übungsaufgabe 1 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Medikamentenhersteller gibt an, dass jede Dose eines Psychopharmakums 200 Gramm (g) enthält. Es besteht der Verdacht, dass systematisch weniger abgefüllt wird. Wir kaufen daher 20 Dosen und wiegen den Inhalt. Die empirische Standardabweichung beträgt 7,28 g. Es wird angenommen, dass die Füllmengen normalverteilt sind.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 184,8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 207,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 187,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 204,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,9 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 188,5 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; Packung &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;border-top: 1px solid black;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; Gewicht (g) &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 191,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 196,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 206,1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,7 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 199,0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 189,3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 183,4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 186,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 200,2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;"&gt; 192,0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+e) Treffen Sie auf Basis der Ergebnisse eine Schlussfolgerung.
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+$$
+\small
+t_{\text{empirisch}} = -2{,}801 \lt -1{,}729 = t_{\text{kritisch}} \quad \Rightarrow \quad H_0\ \text{verwerfen}
+$$
+
+Da der empirische t-Wert kleiner als der kritische t-Wert ist, liegt das Ergebnis im Ablehnungsbereich der Nullhypothese. Diese wird somit verworfen. Es gibt ein statistisch signifikantes Ergebnis; der beobachtete Effekt ist nicht durch Zufall erklärbar.
+&lt;br&gt;&lt;br&gt;
+Die Auswertung zeigt, dass die Dosen im Durchschnitt tatsächlich weniger enthalten als die angegebenen 200g. Es spricht also einiges dafür, dass regelmäßig weniger abgefüllt wird, als der Hersteller angibt.
+&lt;/div&gt;
+
+---
+name: 18
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_5_Lösung_files/figure-html/Lösung 1-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+name: 19
+class: top, left, smaller
+
+### Übungsaufgabe 2
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ordnen Sie die Fragestellungen den richtigen Tests zu. Für alle Fragestellungen gilt, dass die Populationsvarianz der gesuchten Variable unbekannt ist.
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p style="text-align: center;"&gt;
+  &lt;img src="Fragestellungen_Tests.png" style="width: 80%;"&gt;
+&lt;/p&gt;
+
+---
+name: 20
+class: top, left, smaller
+
+### Übungsaufgabe 2 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ordnen Sie die Fragestellungen den richtigen Tests zu. Für alle Fragestellungen gilt, dass die Populationsvarianz der gesuchten Variable unbekannt ist.
+&lt;/div&gt;
+&lt;br&gt;
+&lt;p style="text-align: center;"&gt;
+  &lt;img src="Fragestellungen_Tests_Lösung.png" style="width: 80%;"&gt;
+&lt;/p&gt;
+
+---
+name: 21
+class: top, left, smaller
+
+### Übungsaufgabe 3
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Gesundheitspsychologe möchte untersuchen, ob ein edukativer Film Kinder zu besserer Zahnhygiene motivieren kann. Dafür werden 16 Kinder zufällig auf zwei Gruppen aufgeteilt: Acht Kinder sehen den Film, acht Kinder nicht.&lt;br&gt;
+Im Folgemonat wird festgehalten, an wie vielen Tagen jedes Kind seine Zähne geputzt hat. Es wird eine Normalverteilung der Daten angenommen, und der Levene-Test ist nicht signifikant.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Bedingung &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Durchschnittliche Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Varianz der Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Mit Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Ohne Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 120 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+Analysieren Sie, ob der Film im Mittel zu einer höheren Anzahl an Tagen mit Zähneputzen führt.
+&lt;br&gt;&lt;br&gt;
+a) Welcher statistische Test ist für die Fragestellung angemessen?&lt;br&gt;
+b) Formulieren Sie die statistischen Hypothesen.&lt;br&gt;
+c) Treffen Sie auf Basis der Stichprobendaten eine Testentscheidung bei einem Signifikanzniveau von Alpha = 0,20.
+&lt;/div&gt;
+
+---
+name: 22
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Gesundheitspsychologe möchte untersuchen, ob ein edukativer Film Kinder zu besserer Zahnhygiene motivieren kann. Dafür werden 16 Kinder zufällig auf zwei Gruppen aufgeteilt: Acht Kinder sehen den Film, acht Kinder nicht.&lt;br&gt;
+Im Folgemonat wird festgehalten, an wie vielen Tagen jedes Kind seine Zähne geputzt hat. Es wird eine Normalverteilung der Daten angenommen, und der Levene-Test ist nicht signifikant.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Bedingung &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Durchschnittliche Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Varianz der Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Mit Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Ohne Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 120 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+Analysieren Sie, ob der Film im Mittel zu einer höheren Anzahl an Tagen mit Zähneputzen führt.
+&lt;br&gt;&lt;br&gt;
+a) Welcher statistische Test ist für die Fragestellung angemessen?&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.75em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Da zwei unabhängige Gruppen (Kinder mit Film vs. ohne Film) hinsichtlich ihrer durchschnittlichen Anzahl an Tagen, an denen sie Zähne geputzt haben, verglichen werden sollen, und dabei angenommen wird, dass die Daten normalverteilt (parametrisches Verfahren möglich) und die Varianzen gleich sind (Levene-Test nicht signifikant, Varianzhomogenität ist gegeben, ø Welch-t-Test), ist der &lt;u&gt;Zwei-Stichproben t-Test für unabhängige Messungen&lt;/u&gt; der geeignete Test.
+&lt;/div&gt;
+
+---
+name: 23
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Gesundheitspsychologe möchte untersuchen, ob ein edukativer Film Kinder zu besserer Zahnhygiene motivieren kann. Dafür werden 16 Kinder zufällig auf zwei Gruppen aufgeteilt: Acht Kinder sehen den Film, acht Kinder nicht.&lt;br&gt;
+Im Folgemonat wird festgehalten, an wie vielen Tagen jedes Kind seine Zähne geputzt hat. Es wird eine Normalverteilung der Daten angenommen, und der Levene-Test ist nicht signifikant.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Bedingung &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Durchschnittliche Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Varianz der Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Mit Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Ohne Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 120 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+Analysieren Sie, ob der Film im Mittel zu einer höheren Anzahl an Tagen mit Zähneputzen führt.
+&lt;br&gt;&lt;br&gt;
+b) Formulieren Sie die statistischen Hypothesen.&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.70em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+$$
+\small
+H_0: \quad \mu_{\text{Mit Film}} ≤ \mu_{\text{Ohne Film}}
+$$
+
+$$
+\small
+H_1: \quad \mu_{\text{Mit Film}} &gt; \mu_{\text{Ohne Film}}
+$$
+
+... das bedeutet inhaltlich (nach Aufgabenstellung nicht gefordert, aber sinnvoll, sich zu überlegen): Kinder, die den edukativen Film gesehen haben, putzen im Mittel nicht häufiger ihre Zähne als Kinder, die den Film nicht gesehen haben (Nullhypothese); Kinder, die den edukativen Film gesehen haben, putzen im Mittel häufiger ihre Zähne als Kinder, die den Film nicht gesehen haben (Alternativhypothese; das ist der Verdacht, den wir testen)
+&lt;/div&gt;
+---
+name: 24
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Ein Gesundheitspsychologe möchte untersuchen, ob ein edukativer Film Kinder zu besserer Zahnhygiene motivieren kann. Dafür werden 16 Kinder zufällig auf zwei Gruppen aufgeteilt: Acht Kinder sehen den Film, acht Kinder nicht.&lt;br&gt;
+Im Folgemonat wird festgehalten, an wie vielen Tagen jedes Kind seine Zähne geputzt hat. Es wird eine Normalverteilung der Daten angenommen, und der Levene-Test ist nicht signifikant.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Bedingung &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Durchschnittliche Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+   &lt;th style="text-align:center;font-weight: bold;"&gt; Varianz der Anzahl an Tagen&lt;br&gt;an denen Zähne geputzt wurde&lt;br&gt;(Stichprobenebene) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Mit Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;"&gt; Ohne Film &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 120 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+Analysieren Sie, ob der Film im Mittel zu einer höheren Anzahl an Tagen mit Zähneputzen führt.
+&lt;br&gt;&lt;br&gt;
+c) Treffen Sie auf Basis der Stichprobendaten eine Testentscheidung bei einem Signifikanzniveau von Alpha = 0,20.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+Gegeben sind folgende Werte:
+
+$$
+\small
+n_1 = n_2 = 8
+$$
+$$
+\small
+\bar{x}_1 = 23,\quad \bar{x}_2 = 14,\quad s_1^2 = 80,\quad s_2^2 = 120,\quad \alpha = 0{,}20 \quad \text{(einseitig)}
+$$
+
+
+&lt;/div&gt;
+
+---
+name: 25
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+c) Treffen Sie auf Basis der Stichprobendaten eine Testentscheidung bei einem Signifikanzniveau von Alpha = 0,20.
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Formel für den t-Test für unabhängige Stichproben:
+
+$$
+\small
+t = \frac{\bar{x}_1 - \bar{x}_2}{\hat{\sigma}_{\bar{x}_1 - \bar{x}_2}}
+$$
+
+... mit dem geschätzten Standardfehler der Differenz der Mittelwerte im Nenner:
+
+$$
+\small
+\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{(n_1 - 1) \cdot s_1^2 + (n_2 - 1) \cdot s_2^2}{(n_1 - 1) + (n_2 - 1)} \cdot \left( \frac{1}{n_1} + \frac{1}{n_2} \right) }
+$$
+
+&lt;br&gt;
+Diesen berechnen Sie zuerst durch Einsetzen der Werte:
+
+$$
+\small
+\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{(7 \cdot 80) + (7 \cdot 120)}{14} \cdot \left( \frac{1}{8} + \frac{1}{8} \right) } = \sqrt{ \frac{560 + 840}{14} \cdot \frac{1}{4} } = \sqrt{100 \cdot \frac{1}{4}} = \sqrt{25} = 5
+$$
+
+.. und berechnen damit den empirischen t-Wert:
+
+$$
+\small
+t_{\text{empirisch}} = \frac{23 - 14}{5} = \frac{9}{5} = 1{,}8
+$$
+
+&lt;/div&gt;
+
+---
+name: 26
+class: top, left, smaller
+
+### Übungsaufgabe 3 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+c) Treffen Sie auf Basis der Stichprobendaten eine Testentscheidung bei einem Signifikanzniveau von Alpha = 0,20.
+&lt;/div&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Bestimmung des kritischen Werts:
+
+Die Freiheitsgrade berechnen sich zu:
+
+$$
+\small
+df = n_1 + n_2 - 2 = 8 + 8 - 2 = 14
+$$
+
+Den kritischen t-Wert lesen wir aus der t-Tabelle als das 1 - Alpha-Quantil der t-Verteilung mit 14 Freiheitsgraden ab:
+
+$$
+\small
+t_{\text{kritisch}} = t_{1 - \alpha;\, 14} = t_{0{,}80;\,14} = 0{,}868
+$$
+
+$$
+\small
+t_{\text{empirisch}} = 1{,}8 &gt; 0{,}868 = t_{\text{kritisch}}
+$$
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Das Ergenis zeigt, dass Kinder, die einen edukativen Film sehen, signifikant häufiger die Zähne putzen als Kinder, die den Film nicht sehen. &lt;u&gt;Was bedeutet das inhaltlich?&lt;/u&gt;&lt;br&gt;Es kann angenommen werden, dass das Sehen des edukativen Films mit häufigerem Zähneputzen einhergeht.
+&lt;/div&gt;
+
+---
+name: 16
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle_5_3.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+
+name: 27
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_5_Lösung_files/figure-html/Lösung 3-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+name: 28
+class: top, left, smaller
+
+### Übungsaufgabe 4
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Sie interessieren sich dafür, ob sich Eltern in ihrer Kreativität systematisch von ihren Kindern unterscheiden. Eine Kinderärztin ermöglicht Ihnen den Zugang zu Vorsorgeuntersuchungen, bei denen jeweils ein Elternteil und ein Kind gemeinsam erscheinen. Zur Erhebung der Kreativität werden Elternteil und Kind getrennt gebeten, innerhalb von 5 Minuten möglichst viele Verwendungsmöglichkeiten für einen Ziegelstein zu notieren.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; Paar &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Elternteil &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Kind &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; Differenz &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; -6 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+$$
+\small
+\hat{\sigma}_d = 3{,}45
+$$
+&lt;br&gt;
+a) Welcher Test ist angemessen?&lt;br&gt;
+b) Wie lauten die statistischen Hypothesen?&lt;br&gt;
+c) Wie lautet der empirische t-Wert?&lt;br&gt;
+d) Welche Testentscheidung treffen Sie bei einem Signifikanzniveau von Alpha = 0,01?
+&lt;/div&gt;
+
+---
+name: 29
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Sie interessieren sich dafür, ob sich Eltern in ihrer Kreativität systematisch von ihren Kindern unterscheiden. Eine Kinderärztin ermöglicht Ihnen den Zugang zu Vorsorgeuntersuchungen, bei denen jeweils ein Elternteil und ein Kind gemeinsam erscheinen. Zur Erhebung der Kreativität werden Elternteil und Kind getrennt gebeten, innerhalb von 5 Minuten möglichst viele Verwendungsmöglichkeiten für einen Ziegelstein zu notieren.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; Paar &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Elternteil &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Kind &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; Differenz &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; -6 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+$$
+\small
+\hat{\sigma}_d = 3{,}45
+$$
+&lt;br&gt;
+a) Welcher Test ist angemessen?&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Für den Vergleich der Kreativität von Eltern und ihren Kindern ist ein t-Test für abhängige Stichproben (gepaarter t-Test) angemessen, da jeweils ein Elternteil und ein Kind ein Messpaar bilden. Die Kreativitätswerte stammen somit aus &lt;u&gt;verbundenen Beobachtungen innerhalb derselben Familie.&lt;/u&gt; Der Test prüft, ob der Mittelwert der Differenzen signifikant von null abweicht, also ob sich die Kreativität systematisch zwischen den Gruppen unterscheidet.
+&lt;/div&gt;
+
+---
+name: 30
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Sie interessieren sich dafür, ob sich Eltern in ihrer Kreativität systematisch von ihren Kindern unterscheiden. Eine Kinderärztin ermöglicht Ihnen den Zugang zu Vorsorgeuntersuchungen, bei denen jeweils ein Elternteil und ein Kind gemeinsam erscheinen. Zur Erhebung der Kreativität werden Elternteil und Kind getrennt gebeten, innerhalb von 5 Minuten möglichst viele Verwendungsmöglichkeiten für einen Ziegelstein zu notieren.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; Paar &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Elternteil &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Kind &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; Differenz &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; -6 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+$$
+\small
+\hat{\sigma}_d = 3{,}45
+$$
+&lt;br&gt;
+b) Wie lauten die statistischen Hypothesen?&lt;br&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+$$
+\small
+H_0: \mu_d = 0 \quad \text{(kein Unterschied in der Kreativität zwischen Eltern und Kindern)}
+$$
+
+$$
+\small
+H_1: \mu_d \ne 0 \quad \text{(Unterschied in der Kreativität zwischen Eltern und Kindern)}
+$$
+
+
+&lt;/div&gt;
+
+---
+name: 31
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Sie interessieren sich dafür, ob sich Eltern in ihrer Kreativität systematisch von ihren Kindern unterscheiden. Eine Kinderärztin ermöglicht Ihnen den Zugang zu Vorsorgeuntersuchungen, bei denen jeweils ein Elternteil und ein Kind gemeinsam erscheinen. Zur Erhebung der Kreativität werden Elternteil und Kind getrennt gebeten, innerhalb von 5 Minuten möglichst viele Verwendungsmöglichkeiten für einen Ziegelstein zu notieren.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; Paar &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Elternteil &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Kind &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; Differenz &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; -6 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+$$
+\small
+\hat{\sigma}_d = 3{,}45
+$$
+&lt;br&gt;
+c) Wie lautet der empirische t-Wert?&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+1. Schritt: Differenzen notieren
+$$
+\small
+\text{Differenzen:} \quad d_i = \{2,\ 1,\ 4,\ -6,\ 0,\ 2\}
+$$
+
+2. Schritt: Stichprobengröße (Achtung: Beim t-Test für abhängige Stichproben ist N die Anzahl der Differenzpaare, nicht der Einzelwerte!)
+$$
+\small
+\text{Stichprobengröße:} \quad N = 6 \\
+$$
+
+&lt;/div&gt;
+---
+name: 32
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+c) Wie lautet der empirische t-Wert?&lt;br&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+3. Schritt: Standardabweichung der Differenzen (bereits gegeben!)
+$$
+\small
+\text{Gegeben:} \quad \hat{\sigma}_d = 3{,}45
+$$
+
+4. Schritt: Mittelwert der Differenzen berechnen
+$$
+\small
+\bar{x}_d = \frac{2 + 1 + 4 + (-6) + 0 + 2}{6} = \frac{3}{6} = 0{,}5
+$$
+
+5. Schritt: Standardfehler berechnen
+$$
+\small
+\hat{\sigma}_{\bar{x}_d} = \frac{\hat{\sigma}_d}{\sqrt{N}} = \frac{3{,}45}{\sqrt{6}} \approx \frac{3{,}45}{2{,}45} \approx 1{,}41
+$$
+
+6. Schritt: t-Wert (Teststatistik)berechnen
+$$
+\small
+t_{\text{emp}} = \frac{\bar{x}_d}{\hat{\sigma}_{\bar{x}_d}} = \frac{0{,}5}{1{,}41} \approx 0{,}35
+$$
+
+&lt;/div&gt;
+
+---
+name: 33
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Sie interessieren sich dafür, ob sich Eltern in ihrer Kreativität systematisch von ihren Kindern unterscheiden. Eine Kinderärztin ermöglicht Ihnen den Zugang zu Vorsorgeuntersuchungen, bei denen jeweils ein Elternteil und ein Kind gemeinsam erscheinen. Zur Erhebung der Kreativität werden Elternteil und Kind getrennt gebeten, innerhalb von 5 Minuten möglichst viele Verwendungsmöglichkeiten für einen Ziegelstein zu notieren.
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; Paar &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Elternteil &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; Kind &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;min-width: 60px;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; Differenz &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; -6 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-top: 2px solid black;min-width: 60px;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+$$
+\small
+\hat{\sigma}_d = 3{,}45
+$$
+&lt;br&gt;
+d) Welche Testentscheidung treffen Sie bei einem Signifikanzniveau von Alpha = 0,01?&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+Schritt 1: Gegebene Werte
+$$
+\small
+\text{Gegeben:} \quad t_{\text{empirisch}} \approx 0{,}36 \quad \text{und} \quad \alpha = 0{,}01
+$$
+
+Schritt 2: Bestimmung des kritischen Werts bei zweiseitigem Test (df = 5, da N = 6 und df = N - 1)
+$$
+\quad t_{\text{kritisch}} =  t_{\text{kritisch}} = t_{1 - \alpha/2;\, 5} = t_{\text{kritisch}} = t_{1 - 0,01/2;\, 5} = t_{\text{kritisch}} = t_{1 - 0,005;\, 5} = t_{0{,}995;\,5} = 4{,}032
+$$
+
+&lt;/div&gt;
+---
+
+name: 48
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle_5_4.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 35
+class: top, left, smaller
+
+### Übungsaufgabe 4 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+d) Welche Testentscheidung treffen Sie bei einem Signifikanzniveau von Alpha = 0,01?
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Schritt 3: Vergleich von empirischem und kritischem t-Wert
+$$
+\small
+|t_{\text{empirsch}}| = 0{,}36 \;&lt;\; 4,032 = t_{\text{kritisch}} 
+$$
+
+Schritt 4: Testentscheidung formulieren&lt;br&gt;
+Die Nullhypothese wird nicht verworfen!
+
+&lt;br&gt;&lt;br&gt;
+
+5. Schritt: Interpretation für inhaltlichen Bezug&lt;br&gt;
+Es gibt bei einem Singifikanzniveau von 0,01 keinen signifikanten Unterschied zwischen Eltern und Kindern in Ihrer Kreativität.
+&lt;/div&gt;
+---
+name: 36
+class: center, middle
+
+
+
+&lt;img src="CHEAT-SHEET_Korrelation_page1.png" width="80%" /&gt;
+
+---
+name: 37
+class: center, middle
+
+&lt;img src="CHEAT-SHEET_Korrelation_page2.png" width="80%" /&gt;
+
+---
+
+name: 38
+class: top, left, smaller
+
+### Übungsaufgabe 5
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Die Variablen x und y sind intervallskaliert. Prüfen Sie, ob ein Zusammenhang zwischen den beiden Variablen besteht. Es wird angenommen, dass keine Ausreißer in den Daten enthalten sind.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; x &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+$$
+\small \bar{x} = 4 \quad s_x = 3{,}16
+$$
+
+$$
+\small \bar{y} = 3 \quad s_y = 2
+$$
+
+
+
+a) Stellen Sie die statistischen Hypothesen auf. &lt;br&gt;
+b) Besteht ein Zusammenhang zwischen den beiden Variablen? &lt;br&gt;&lt;strong&gt;Falls ja: Wie würden Sie die gefundene Korrelation bzw. den Effekt bewerten?&lt;/strong&gt;&lt;br&gt;
+c) Falls eine Korrelation besteht: Würden Sie diese als signifikant bezeichnen (Alpha = 0,05)?
+&lt;/div&gt;
+
+---
+name: 39
+class: top, left, smaller
+
+### Übungsaufgabe 5 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Die Variablen x und y sind intervallskaliert. Prüfen Sie, ob ein Zusammenhang zwischen den beiden Variablen besteht. Es wird angenommen, dass keine Ausreißer in den Daten enthalten sind.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; x &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+$$
+\small \bar{x} = 4 \quad s_x = 3{,}16
+$$
+
+$$
+\small \bar{y} = 3 \quad s_y = 2
+$$
+
+a) Stellen Sie die statistischen Hypothesen auf. &lt;br&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+$$
+\small
+H_0: \rho = 0 \quad \text{(Es besteht kein linearer Zusammenhang zwischen } x \text{ und } y \text{)}
+$$
+
+$$
+\small
+H_1: \rho \ne 0 \quad \text{(Es besteht ein linearer Zusammenhang zwischen } x \text{ und } y \text{)}
+$$
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+---
+name: 40
+class: top, left, smaller
+
+### Übungsaufgabe 5 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Die Variablen x und y sind intervallskaliert. Prüfen Sie, ob ein Zusammenhang zwischen den beiden Variablen besteht. Es wird angenommen, dass keine Ausreißer in den Daten enthalten sind.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; x &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+$$
+\small \bar{x} = 4 \quad s_x = 3{,}16
+$$
+
+$$
+\small \bar{y} = 3 \quad s_y = 2
+$$
+
+
+
+b) Besteht ein Zusammenhang zwischen den beiden Variablen? &lt;br&gt;&lt;strong&gt;Falls ja: Wie würden Sie die gefundene Korrelation bzw. den Effekt bewerten?&lt;/strong&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+1. Schritt: Gegeben sind folgende Werte:
+
+$$
+\small
+\bar{x} = 4, \quad \bar{y} = 3, \quad s_x = 3{,}16, \quad s_y = 2
+$$
+
+&lt;/div&gt;
+
+---
+name: 41
+class: top, left, smaller
+
+### Übungsaufgabe 5 - Lösung
+
+b) Besteht ein Zusammenhang zwischen den beiden Variablen? &lt;br&gt;&lt;strong&gt;Falls ja: Wie würden Sie die gefundene Korrelation bzw. den Effekt bewerten?&lt;/strong&gt;&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+2. Schritt:  Einsetzen in die Formel für Pearson-r
+$$
+\small
+r = \frac{1}{n - 1} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s_x} \cdot \frac{y_i - \bar{y}}{s_y} \right) 
+$$
+
+$$
+\small
+r = \frac{
+\left(\frac{x_1-\bar{x}}{s_x}\cdot\frac{y_1-\bar{y}}{s_y}\right) +
+\left(\frac{x_2-\bar{x}}{s_x}\cdot\frac{y_2-\bar{y}}{s_y}\right) +
+\left(\frac{x_3-\bar{x}}{s_x}\cdot\frac{y_3-\bar{y}}{s_y}\right) +
+\left(\frac{x_4-\bar{x}}{s_x}\cdot\frac{y_4-\bar{y}}{s_y}\right) +
+\left(\frac{x_5-\bar{x}}{s_x}\cdot\frac{y_5-\bar{y}}{s_y}\right)
+}{n-1}
+$$
+
+
+
+
+$$
+\tiny
+r = \frac{(-0{,}63 \cdot -1{,}00) + (-0{,}95 \cdot -0{,}50) + (1{,}58 \cdot 1{,}50) + (0{,}32 \cdot 0{,}50) + (-0{,}32 \cdot -0{,}50)}{5 - 1}
+= \frac{0{,}63 + 0{,}48 + 2{,}37 + 0{,}16 + 0{,}16}{4} = \frac{3{,}80}{4} = 0{,}95
+$$
+
+
+Es besteht ein positiver Zusammenhang zwischen den Variablen x und y. Mit r = 0,95 liegt ein großer Effekt vor (nach Cohen, 1992)
+
+&lt;/div&gt;
+---
+name: 42
+class: top, left, smaller
+
+### Übungsaufgabe 5 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Die Variablen x und y sind intervallskaliert. Prüfen Sie, ob ein Zusammenhang zwischen den beiden Variablen besteht. Es wird angenommen, dass keine Ausreißer in den Daten enthalten sind.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; x &lt;/td&gt;
+   &lt;td style="text-align:center;border-bottom: 1px solid black;width: 4em; "&gt; y &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 4em; "&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+$$
+\small \bar{x} = 4 \quad s_x = 3{,}16
+$$
+
+$$
+\small \bar{y} = 3 \quad s_y = 2
+$$
+
+c) Falls eine Korrelation besteht: Würden Sie diese als signifikant bezeichnen (Alpha = 0,05)?
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+1. Schritt: Gegebene Werte
+$$
+\small
+r = 0{,}95, \quad N = 5, \quad \alpha = 0{,}05
+$$
+
+&lt;/div&gt;
+---
+name: 43
+class: top, left, smaller
+
+### Übungsaufgabe 5 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+c) Falls eine Korrelation besteht: Würden Sie diese als signifikant bezeichnen (Alpha = 0,05)?
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+2. Schritt: Freiheitsgrade berechnen
+$$
+\small
+df = N - 2 = 5 - 2 = 3
+$$
+
+3. Schritt: Einsetzen in die Formel aus der Folie (t-Verteilung)
+
+$$
+\small
+t = \frac{r \cdot \sqrt{N - 2}}{\sqrt{1 - r^2}} 
+= \frac{0{,}95 \cdot \sqrt{5 - 2}}{\sqrt{1 - 0{,}95^2}} 
+= \frac{0{,}95 \cdot \sqrt{3}}{\sqrt{1 - 0{,}9025}} 
+= \frac{0{,}95 \cdot 1{,}732}{\sqrt{0{,}0975}} 
+= \frac{1{,}645}{0{,}312} 
+\approx 5{,}27
+$$
+
+4. Schritt: Kritischer t-Wert
+$$
+\small
+t_{\text{kritisch}} = t_{1 - \alpha/2;\, df} = t_{0{,}975;\,3} = 3{,}182
+$$
+
+5. Schritt: Testentscheidung
+$$
+\small
+|t_{\text{empirisch}}| = 5{,}27 &gt; 3,182 = t_{\text{kritisch}} \quad (\text{zweiseitig, } \alpha = 0{,}05, df = 3)
+$$
+
+$$
+\small
+\Rightarrow \text{Die Korrelation ist signifikant auf dem Niveau von } \alpha = 0{,}05.
+$$
+
+&lt;/div&gt;
+
+---
+name: 48
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle_5_5.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 44
+class: top, left, smaller
+
+### Übungsaufgabe 6
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Zwei Kunstkritiker bringen zwölf Gemälde nach ihrem Wert in eine Rangreihe. 
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; Gemälde &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Korreliert die Rangfolge der beiden Kritiker?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+a) Welcher Korrelationskoeffizient sollte bestimmt werden? Begründen Sie Ihre Entscheidung.&lt;br&gt;
+b) Beantworten Sie die Forschungsfrage.&lt;br&gt;
+c) Ist die Korrelation auf einem Signifikanzniveau von 1% signifikant?
+&lt;/div&gt;
+
+---
+name: 45
+class: top, left, smaller
+
+### Übungsaufgabe 6 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Zwei Kunstkritiker bringen zwölf Gemälde nach ihrem Wert in eine Rangreihe. 
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; Gemälde &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Korreliert die Rangfolge der beiden Kritiker?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+a) Welcher Korrelationskoeffizient sollte bestimmt werden? Begründen Sie Ihre Entscheidung.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Da es sich bei den Bewertungen beider Kritiker um Rangdaten handelt, ist der passende Zusammenhangsmaß der Rangkorrelationskoeffizient nach Spearman. Der Spearman-Koeffizient prüft, ob eine monotone Beziehung zwischen zwei Rangreihen besteht. Er ist daher geeignet, wenn beide Variablen ordinalskaliert (Ränge) sind – wie hier.
+&lt;/div&gt;
+
+---
+name: 46
+class: top, left, smaller
+
+### Übungsaufgabe 6 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Zwei Kunstkritiker bringen zwölf Gemälde nach ihrem Wert in eine Rangreihe. 
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; Gemälde &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Korreliert die Rangfolge der beiden Kritiker?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+b) Beantworten Sie die Forschungsfrage.&lt;br&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+$$
+\small
+r_s = 1 - \frac{6 \cdot \sum d_i^2}{N \cdot (N^2 - 1)} 
+= 1 - \frac{6 \cdot 50}{12 \cdot (12^2 - 1)} 
+= 1 - \frac{300}{12 \cdot 143} 
+= 1 - \frac{300}{1716} 
+\approx 1 - 0{,}175 
+= 0{,}825 \approx 0{,}83
+$$
+
+
+Die Rangfolge der beiden Kritiker korreliert positiv mit 0,65. Nach Cohen (1992) entspricht dies einem großen Effekt.
+
+&lt;/div&gt;
+
+---
+name: 47
+class: top, left, smaller
+
+### Übungsaufgabe 6 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Zwei Kunstkritiker bringen zwölf Gemälde nach ihrem Wert in eine Rangreihe. 
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; Gemälde &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;width: 3em; "&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; Kritiker 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:center;width: 3em; "&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Korreliert die Rangfolge der beiden Kritiker?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+c) Ist die Korrelation auf einem Signifikanzniveau von 1% signifikant?
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+
+$$
+\small
+t = \frac{r_s \cdot \sqrt{N - 2}}{\sqrt{1 - r_s^2}} 
+= \frac{0{,}83 \cdot \sqrt{12 - 2}}{\sqrt{1 - 0{,}83^2}} 
+= \frac{0{,}83 \cdot \sqrt{10}}{\sqrt{1 - 0{,}6889}} 
+= \frac{0{,}83 \cdot 3{,}16}{\sqrt{0{,}3111}} 
+= \frac{2{,}623}{0{,}558} \approx 4{,}71
+$$
+
+$$
+\small
+df = N - 2 = 12 - 2 = 10
+$$
+
+$$
+\small
+\Rightarrow \quad t_\text{kritisch} = t_{(1-Alpha/2; 10)} = t_{(1-0,01/2; 10) = t_{1-0,005; 10}} = t_{0,995} = 3{,}169
+$$
+
+$$
+\small
+\Rightarrow \quad t_\text{empirisch} = 4,71 &gt; 3,169 = t_\text{kritisch}
+$$
+
+Die Rangkorrelation ist mit 0,83 hoch und auf dem Signifikanzniveau Alpha = 0,01 signifikant } (t = 4,71; df = 10). Es besteht ein signifikanter Zusammenhang zwischen den Rangreihen der beiden Kritiker.
+&lt;/div&gt;
+
+---
+name: 48
+class: top, left, smallest
+&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="t_Tabelle_5_6.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 36
+class: center, middle
+
+
+
+&lt;img src="CHEAT-SHEET_Chi_Quadrat_Test.png" width="80%" /&gt;
+
+---
+name: 46
+class: top, left, smaller
+
+### Übungsaufgabe 7
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Eine Bildungsforscherin interessiert sich dafür, wie Schülerinnen zur Schule kommen. Sie vermutet, dass das Verkehrsmittel "Fahrrad" und "Öffentliche Verkehrsmittel" gleich häufig genutzt werden. Aus einer Stichprobe von N = 150 Schülerinnen ergibt sich folgendes Ergebnis:
+&lt;br&gt;&lt;br&gt;
+Anzahl Schülerinnen (Fahrrad): 94&lt;br&gt;
+Anzahl Schülerinnen (Öffentliche Verkehrsmittel): 56
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+a) Berechnen Sie die unter der Hypothese der Forscherin erwarteten Häufigkeiten für die gewählten Verkehrsmittel der Schülerinnen.&lt;br&gt;
+b) Prüfen Sie, ob sich die angenommene Verteilung in den Daten zeigt oder ob es signifikante Unterschiede gibt. Berechnen Sie dazu die empirische und kritische Teststatistik bei einem Signifikanzniveau von Alpha = 0,05.&lt;br&gt;
+c) Geben Sie das Ergebnis mit einer statistischen Begründung an und ordnen Sie das Ergebnis kurz inhaltlich ein.
+&lt;/div&gt;
+---
+
+name: 46
+class: top, left, smaller
+
+### Übungsaufgabe 7 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Eine Bildungsforscherin interessiert sich dafür, wie Schülerinnen zur Schule kommen. Sie vermutet, dass das Verkehrsmittel "Fahrrad" und "Öffentliche Verkehrsmittel" gleich häufig genutzt werden. Aus einer Stichprobe von N = 150 Schülerinnen ergibt sich folgendes Ergebnis:
+&lt;br&gt;&lt;br&gt;
+Anzahl Schülerinnen (Fahrrad): 94&lt;br&gt;
+Anzahl Schülerinnen (Öffentliche Verkehrsmittel): 56
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+a) Berechnen Sie die unter der Hypothese der Forscherin erwarteten Häufigkeiten für die gewählten Verkehrsmittel der Schülerinnen.&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Wir lesen aus Aufgabenstellung: Gleichverteilungsannahme!&lt;br&gt;
+Wenn keine Präferenz besteht, dann soll jede Kategorie den gleichen Anteil haben. Das heißt:
+
+$$
+\small
+e_i = \frac{\text{Gesamtzahl}}{\text{Anzahl der Kategorien}}
+$$
+
+Es gibt zwei Kategorien: Fahrrad vs. Öffentliche Verkehrsmittel und N = 150
+
+$$
+\small
+e_i = \frac{150}{2} = 75 \Rightarrow \text{erwartet ist also } e_{\text{Fahrrad}} = 75; e_{\text{Öffentlich}} = 75
+$$
+
+&lt;/div&gt;
+
+---
+name: 46
+class: top, left, smaller
+
+### Übungsaufgabe 7 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Eine Bildungsforscherin interessiert sich dafür, wie Schülerinnen zur Schule kommen. Sie vermutet, dass das Verkehrsmittel "Fahrrad" und "Öffentliche Verkehrsmittel" gleich häufig genutzt werden. Aus einer Stichprobe von N = 150 Schülerinnen ergibt sich folgendes Ergebnis:
+&lt;br&gt;&lt;br&gt;
+Anzahl Schülerinnen (Fahrrad): 94&lt;br&gt;
+Anzahl Schülerinnen (Öffentliche Verkehrsmittel): 56
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+b) Prüfen Sie, ob sich die angenommene Verteilung in den Daten zeigt oder ob es signifikante Unterschiede gibt. Berechnen Sie dazu die empirische und kritische Teststatistik bei einem Signifikanzniveau von Alpha = 0,05.&lt;br&gt;
+&lt;/div&gt;
+&lt;div style="flex: 1.4; font-size: 0.70em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Empirischer Wert:
+$$
+\small
+\chi^2 = \sum_{i=1}^{k} \frac{(f_{bi} - f_{ei})^2}{f_{ei}} = \frac{(94-75)^2}{75} + \frac{(56-75)^2}{75} = 9,63
+$$
+Kritischer Wert:
+$$
+\small
+df = k - 1 = 1, \quad \chi^2_{\text{kritisch}} = \chi^2_{Alpha-1;1} = \chi^2_{0,95;1} = 3,841
+$$
+
+Testentscheidung:
+$$
+\small
+\chi^2_{\text{empirisch}} = 9,63 &gt; 3,841 = \chi^2_{\text{kritisch}} \implies \text{signifikant}
+$$
+&lt;/div&gt;
+
+---
+name: 48
+class: top, left, smallest
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="Chi_Quadrat_Tabelle_5_7.png" style="max-width: 55%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_5_Lösung_files/figure-html/Lösung 7-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+name: 46
+class: top, left, smaller
+
+### Übungsaufgabe 7 - Lösung
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+Eine Bildungsforscherin interessiert sich dafür, wie Schülerinnen zur Schule kommen. Sie vermutet, dass das Verkehrsmittel "Fahrrad" und "Öffentliche Verkehrsmittel" gleich häufig genutzt werden. Aus einer Stichprobe von N = 150 Schülerinnen ergibt sich folgendes Ergebnis:
+&lt;br&gt;&lt;br&gt;
+Anzahl Schülerinnen (Fahrrad): 94&lt;br&gt;
+Anzahl Schülerinnen (Öffentliche Verkehrsmittel): 56
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+c) Geben Sie das Ergebnis mit einer statistischen Begründung an und ordnen Sie das Ergebnis kurz inhaltlich ein.
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;"&gt;
+Der empirische Chi-Quadrat-Wert ist größer als der kritische Chi-Quadrat-Wert. Der Chi-Quadrat Test ist damit signifikant. 
+
+&lt;br&gt;&lt;br&gt;Es gibt statistisch signifikante Hinweise, dass mehr Schülerinnen mit dem Fahrrad als mit öffentlichen Verkehrsmitteln zur Schule kommen.
+&lt;/div&gt;
+---
+name: 46
+class: top, left, smaller
+
+### Beispiel Multiple-Choice-Frage
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Aufgabe ## (5 Punkte)&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Welche Aussagen zum Konfidenzintervall sind richtig?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+☐ Die Breite des Konfidenzintervalls bestimmt sich unter anderem durch den Standardfehler der Schätzfunktion. &lt;br&gt;&lt;br&gt;
+
+☐ Ein schmales Konfidenzintervall weist auf eine genaue Schätzung hin. &lt;br&gt;&lt;br&gt;
+
+☐ Ein breites Konfidenzintervall weist auf eine hohe Konfidenz in den geschätzten Wert hin. &lt;br&gt;&lt;br&gt; 
+
+☐ Die Breite des Konfidenzintervalls hängt unter anderem von der Irrtumswahrscheinlichkeit ab. &lt;br&gt;&lt;br&gt;  
+
+☐ Je größer die Stichprobengröße n, desto breiter das Konfidenzintervall. &lt;br&gt;&lt;br&gt;
+
+&lt;/div&gt;
+---
+name: 46
+class: top, left, smaller
+
+### Beispiel Multiple-Choice-Frage
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Aufgabe ## (5 Punkte)&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Welche Aussagen zum Konfidenzintervall sind richtig?&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+✅ Die Breite des Konfidenzintervalls bestimmt sich unter anderem durch den Standardfehler der Schätzfunktion. &lt;br&gt;
+&lt;strong&gt;&lt;span style="font-size:100%;"&gt;Die Breite des Konfidenzintervalls hängt  von der Standardabweichung der Schätzung ab - konkret vom Standardfehler. Je größer der Standardfehler, desto breiter das Intervall. Der Standardfehler hängt wiederum z.B. von der Streuung in den Daten und der Stichprobengröße ab.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+
+✅ Ein schmales Konfidenzintervall weist auf eine genaue Schätzung hin. &lt;br&gt;
+&lt;strong&gt;&lt;span style="font-size:100%;"&gt;Wenn das Intervall schmal ist, bedeutet das, dass der Schätzer wenig Streuung hat, also eine hohe Präzision. Man spricht dann auch von hoher Genauigkeit der Punktschätzung.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+
+---
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div style="text-align: left; font-size: 95%;"&gt;
+❌ Ein breites Konfidenzintervall weist auf eine hohe Konfidenz in den geschätzten Wert hin. &lt;br&gt;
+&lt;strong&gt;&lt;span style="font-size:100%;"&gt;Klingt verlockend, ist aber falsch. Das Konfidenz (z.B. 95%) ist vorgegeben und unabhängig von der Breite. Ein breites Intervall bedeutet nicht "mehr Sicherheit", sondern eher das Gegenteil: Die Schätzung ist unsicherer, weil das Intervall groß ist.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+
+✅ Die Breite des Konfidenzintervalls hängt unter anderem von der Irrtumswahrscheinlichkeit ab. &lt;br&gt;
+&lt;strong&gt;&lt;span style="font-size:100%;"&gt;Wenn man z.B. ein 95%-Intervall statt eines 90%-Intervalls wählst, muss das intervall breiter werden, um mehr Werte mit einzuschließen. Höhere gewünschte Sicherheit (niedrigere Irrtumswahrscheinlichkeit Alpha) &gt;&gt; breiteres Intervall&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+
+❌ Je größer die Stichprobengröße n, desto breiter das Konfidenzintervall. &lt;br&gt;
+&lt;strong&gt;&lt;span style="font-size:100%;"&gt;Je größer die Stichprobe, desto kleiner der Standardfehler und desto schmaler das Intervall. Große Stichproben liefern präzisere Schätzungen.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+&lt;br&gt;
+$$
+\small
+\text{Konfidenzintervall bei bekannter Populationsvarianz, zweiseitige Testung} = \bar{x} \pm z_{1-\tfrac{\alpha}{2}} \cdot \frac{s}{\sqrt{n}}
+$$
+
+$$
+\small
+\text{Standardfehler = } \frac{s}{\sqrt{n}}
+$$
+&lt;/div&gt;
+
+---
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "slideNumberFormat": "%current%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

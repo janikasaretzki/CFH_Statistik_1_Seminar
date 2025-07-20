@@ -1,0 +1,437 @@
+---
+title: "Zusatzaufgaben"
+subtitle: "⚔<br/>with xaringan"
+author: "Janika Saretzki"
+institute: "RStudio, PBC"
+date: "2025/05/01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "hygge"]
+    lib_dir: libs
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    seal: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(kableExtra)
+library(knitr)
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+library(MASS)
+library(ggpubr)
+library(xaringanthemer)
+library(xaringanExtra)
+library(pdftools)
+library(magick)
+library(scales)
+library(patchwork)
+library(latex2exp)
+library(RColorBrewer)
+library(gridExtra)
+library(grid)
+
+style_duo_accent(
+  primary_color = "#621C37",
+  secondary_color = "#EE0071",
+  background_image = "blank.png"
+)
+
+xaringanExtra::use_xaringan_extra(c("tile_view"))
+
+use_scribble(
+  pen_color = "#EE0071",
+  pen_size = 4
+  )
+
+knitr::opts_chunk$set(
+  fig.retina = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+name: 1
+class: middle, left
+<br><br><br><br><br><br><br>
+# Statistik 1
+## Seminar
+***
+### Zusatzaufgaben
+##### Janika Saretzki, MSc. 
+
+---
+name: 7
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+a) Was bedeutet es, wenn eine Person für letzte Nacht einen z-Wert von -1.90 aufweist? Wie viele Stunden hat sie geschlafen?<br>
+b) Welcher Anteil an Personen in der Population hat einen z-Wert von ≤ -1.90?<br>
+c) Wie wahrscheinlich ist es, dass eine zufällig gezogene Person aus der Verteilung einen z-Wert von ≤ -1.90 aufweist?<br>
+d) Wie viele Stunden muss eine Person letzte Nacht geschlafen haben, dass die Wahrscheinlichkeit, sie zu beobachten, gleich 2.5% ist? <strong>Hinweis: Beachten Sie, dass das sowohl bei sehr wenig als auch bei sehr viel Schlaf möglich ist! </strong><br><br>
+e) Nun wird eine Person mit einer Schlafdauer von 6.15h beobachtet, welche aus einer Population von Arbeitnehmerinnen und Arbeitnehmern stammt, bei der die Schlafdauer der letzten Nacht der folgenden Verteilung folgt: </span>
+
+$$
+\small
+\mu = 7{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+
+<span style="font-size: 90%;">
+Welchen z-Wert hat diese Person? Vergleichen Sie diesen Wert mit dem z-Wert aus Aufgabe a)!
+</span>
+
+---
+name: 8
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+a) Was bedeutet es, wenn eine Person für letzte Nacht einen z-Wert von -1.90 aufweist? Wie viele Stunden hat sie geschlafen?<br>
+
+<div style="font-size: 0.95em; line-height: 1.6; color: green;">
+Rückwärts denken: Was ist der ursprüngliche Wert x? <br>
+Schrittweise Umformung der Formel:
+
+$$
+\small
+-1{,}90 = \frac{x_i - 9}{1{,}50} \
+$$
+
+$$
+\small
+-1{,}90 \cdot 1{,}50 = x_i - 9
+$$
+
+$$
+\small
+x_i = -1{,}90 \cdot 1{,}50 + 9 = 6{,}15
+$$
+Aus dem gegebenen z-Wert von –1,90 ergibt sich eine Schlafdauer von 6,15 Stunden.
+</div>
+
+---
+name: 9
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+b) Welcher Anteil an Personen in der Population hat einen z-Wert von ≤ -1.90?<br>
+</span>
+<div style="font-size: 0.95em; line-height: 1.6; color: green;"><br>
+<br><br>
+P(X ≤ 6,15) = P(Z ≤ -1,9) = 1 - P(Z ≤ 1,9) = 1 - 0,9713 = 0,0287 = 2,87%
+<br><br>
+Etwa 2,87% der Personen in der Population haben einen z-Wert von kleiner oder gleich -1,90.
+</div>
+
+---
+name: 10
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+c) Wie wahrscheinlich ist es, dass eine zufällig gezogene Person aus der Verteilung einen z-Wert von ≤ -1.90 aufweist?<br>
+
+<div style="font-size: 0.95em; line-height: 1.6; color: green;">
+<br><br><br>
+Da in b) bereits berechnet wurde, dass der Anteil der Personen mit einem z-Wert ≤ -1,90 bei 2,87% liegt, entspricht dies auch der Wahrscheinlichkeit, dass eine zufällig gezogene Person aus der Verteilung einen z-Wert von ≤ -1,90 aufweist.
+</div>
+
+---
+name: 11
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+d) Wie viele Stunden muss eine Person letzte Nacht geschlafen haben, dass die Wahrscheinlichkeit, sie zu beobachten, gleich 2.5% ist? <strong>Hinweis: Beachten Sie, dass das sowohl bei sehr wenig als auch bei sehr viel Schlaf möglich ist! </strong><br><br>
+
+<div style="font-size: 0.95em; line-height: 1.6; color: green;">
+Gesucht ist der Wert (bzw. die Werte) von X, für die gilt P(X ≤ x) = 0,025 (links) oder P(X ≥ x) = 0,025 (rechts). Diese unteren (links) bzw. oberen (rechts) 2,5% entsprechen jeweils den äußeren 2,5% in den Flanken der Normalverteilung.
+<br><br>
+Aus der Standardnormalverteilung wissen wir: P(Z ≤ -1,96) = 0,025 und P(Z ≥ +1,96) = 0,025. Das sind die kritischen z-Werte für eine zweiseitge Fläche von 5% (2,5% je Seite).
+<br><br>
+Nun: Umrechnung der z-Wert in X-Werte
+
+</div>
+
+---
+name: 11
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+d) Wie viele Stunden muss eine Person letzte Nacht geschlafen haben, dass die Wahrscheinlichkeit, sie zu beobachten, gleich 2.5% ist? <strong>Hinweis: Beachten Sie, dass das sowohl bei sehr wenig als auch bei sehr viel Schlaf möglich ist! </strong><br><br>
+
+<div style="font-size: 0.85em; line-height: 1.6; color: green;">
+
+$$
+\small
+z_i = \frac{x_i - \mu}{\sigma}
+$$
+
+$$
+\small
+z_i \cdot \sigma = x_i - \mu
+$$
+$$
+\small
+x_i = z_i \cdot \sigma + \mu \
+$$
+
+$$
+\small
+x_{\text{links}} = -1{,}95 \cdot 1{,}5 + 9{,}00 = 6{,}06
+$$
+
+$$
+\small
+x_{\text{rechts}} = 1{,}95 \cdot 1{,}5 + 9{,}00 = 11{,}94
+$$
+<br>
+
+Eine Schlafdauer von ca. 6,06 oder 11,94 Stunden entspricht einer Wahrscheinlichkeit von 2,5 %, beobachtet zu werden.
+</div>
+
+---
+name: 12
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+e) Nun wird eine Person mit einer Schlafdauer von 6.15h beobachtet, welche aus einer Population von Arbeitnehmerinnen und Arbeitnehmern stammt, bei der die Schlafdauer der letzten Nacht der folgenden Verteilung folgt: </span>
+
+$$
+\small
+\mu = 7{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+
+<span style="font-size: 90%;">
+Welchen z-Wert hat diese Person? Vergleichen Sie diesen Wert mit dem z-Wert aus Aufgabe a)!
+</span>
+
+<div style="font-size: 0.85em; line-height: 1.6; color: green;">
+<br>
+$$
+\small
+z_i = \frac{x_i - \mu}{\sigma} = \frac{6,15 - 7,00}{1,50}  = \frac{-0,85}{1,50} = -0,57
+$$
+<br>
+In Aufgabe a) ging es um die gleiche beobachtete Schlafdauer (6,15 Stunden), aber mit einer anderen Population. In dieser war 6,15 Stunden stark überdurchschnittlich (z = -1,90). In der neuen Population (Arbeitnehmer:innen) ist dieselbe Schlafdauer weniger auffällig (z = -0,57). Dieselbe Schlafdauer ist damit <u>relativ zur Vergleichsgruppe</u>.
+</div>
+
+---
+name: 31
+class: top, left, smaller
+
+### Einheit 4, Übungsaufgabe 4
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+---
+name: 32
+class: top, left, smaller
+
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+<div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;">
+
+Inhaltliche Hypothesen
+<ul>
+  <li>Nullhypothese (H₀): Der Therapieansatz hat keinen Effekt auf das durchschnittliche Prüfungsangstniveau. Die behandelten Studierenden unterscheiden sich nicht im Mittelwert von der Population.</li>
+  <li>Alternativhypothese (H₁): Die Behandlung führt zu einem veränderten durchschnittlichen Prüfungsangstwert. Der Mittelwert der behandelten Gruppe unterscheidet sich signifikant vom Populationsmittelwert.</li>
+</ul>
+
+Statistische Hypothesen (zweiseitiger Test)
+
+$$
+\small
+H_0\!: \mu = 45
+$$
+$$
+\small
+H_1\!: \mu \neq 45
+$$
+</div>
+
+---
+name: 33
+class: top, left, smaller
+
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+<div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;">
+
+Nun: Durchführung des z-Tests bei α = 0,02. Gegeben sind die folgenden Kennwerte:
+
+<ul>
+  <li>µ = 45 (bekannter Populationsmittelwert)</li>
+  <li>σ = 5 (bekannte Standardabweichung der Population)</li>
+  <li>n = 30 (Stichprobengröße)</li>
+  <li>x̄ = 42 (Stichprobenmittelwert)</li>
+  <li>α = 0,02 (zweiseitiger Test → α/2 = 0,01 je Seite)</li>
+</ul>
+
+</div>
+
+---
+name: 34
+class: top, left, smaller
+
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+<div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;">
+Standardfehler berechnen:
+$$
+\small
+SE = \frac{\sigma}{\sqrt{n}} = \frac{5}{\sqrt{30}} = 0{,}91
+$$
+
+z-Wert berechnen:
+
+$$
+\small
+z_{\text{emp}} = \frac{ \bar{x} - \mu_0 }{ SE } = \frac{42 - 45}{0{,}91} = -3{,}29
+$$
+Kritischer z-Wert (zweiseitiger Test, \(\alpha = 0{,}02\)):
+
+$$
+\small
+z_{\text{krit}} = \pm z_{1 - \frac{\alpha}{2}} = \pm z_{0{,}99} = \pm 2{,}33
+$$
+</div>
+
+---
+name: 35
+class: top, left, smaller
+
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+<div style="flex: 1.4; font-size: 0.80em; line-height: 1.5; color: green; margin-top: 20px;">
+Testentscheidung:
+
+$$
+\small
+|z_{\text{emp}}| = 3{,}29 > 2{,}33 = z_{\text{kritisch}}
+$$
+
+<ul>
+  <li>Der empirische Wert liegt im Ablehnungsbereich.</li>
+  <li>Die Nullhypothese wird verworfen.</li>
+</ul>
+
+Interpretation: Das Ergebnis ist statistisch signifikant auf dem 2%-Niveau. Der beobachtete Mittelwert von 42 unterscheidet sich signifikant vom Populationsmittelwert von 45. Der Forscher kann daraus schließen, dass der Therapieansatz einen Einfluss auf das Prüfungsangstniveau hat.
+</div>
+
+---
+<br>
+```{r Dataframe 1, echo=FALSE, fig.align='center', fig.width=6, fig.height=4.5, out.width='70%', dpi=300}
+
+z_emp <- 3.29
+z_crit <- 2.33
+x <- seq(-4, 4, length.out = 1000)
+y <- dnorm(x)
+df <- data.frame(x, y)
+
+ggplot(df, aes(x, y)) +
+  geom_line(color = "black", size = 0.5) +
+
+  # Ablehnungsbereiche
+  geom_area(data = subset(df, x <= -z_crit), fill = "red", alpha = 0.4) +
+  geom_area(data = subset(df, x >= z_crit), fill = "red", alpha = 0.4) +
+
+  # Kritische z-Werte
+  geom_vline(xintercept = c(-z_crit, z_crit), linetype = "dotted", color = "red") +
+  annotate("text", x = -z_crit, y = 0.1, label = "kritischer \nz-Wert = -2.33", hjust = 1.2, size = 3, color = "red") +
+  annotate("text", x = z_crit, y = 0.1, label = "kritischer \nz-Wert = 2.33", hjust = -0.2, size = 3, color = "red") +
+
+  # Empirischer z-Wert
+  geom_vline(xintercept = z_emp, linetype = "dashed", color = "blue") +
+  annotate("text", x = z_emp - 0.1, y = 0.18, label = "empirischer \nz-Wert = 3.29", hjust = 1, size = 3, color = "blue") +
+
+  annotate("text", x = -3.4, y = 0.025, label = "Ablehnungs-\nbereich", color = "red", size = 3, hjust = 0.5) +
+  annotate("text", x = 3.4, y = 0.025, label = "Ablehnungs-\nbereich", color = "red", size = 3, hjust = 0.5) +
+
+  labs(
+    title = "",
+    subtitle = "",
+    x = "z-Wert", y = "Dichte"
+  ) +
+  xlim(-4, 4) +
+  ylim(0, 0.45) +
+
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black"),
+    plot.margin = margin(10, 30, 10, 10),  
+    plot.title.position = "plot",
+    clip = "off"
+  ) +
+  scale_x_continuous(expand = expansion(mult = c(0.01, 0.1)))
+
+```
+

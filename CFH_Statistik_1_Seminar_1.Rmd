@@ -1,0 +1,1069 @@
+---
+title: "Einheit 1"
+subtitle: "⚔<br/>with xaringan"
+author: "Janika Saretzki"
+institute: "RStudio, PBC"
+date: "2025/05/01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "hygge"]
+    lib_dir: libs
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    seal: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(kableExtra)
+library(knitr)
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+library(MASS)
+library(ggpubr)
+library(xaringanthemer)
+library(xaringanExtra)
+library(pdftools)
+library(magick)
+library(scales)
+
+style_duo_accent(
+  primary_color = "#621C37",
+  secondary_color = "#EE0071",
+  background_image = "blank.png"
+)
+
+xaringanExtra::use_xaringan_extra(c("tile_view"))
+
+use_scribble(
+  pen_color = "#EE0071",
+  pen_size = 4
+  )
+
+knitr::opts_chunk$set(
+  fig.retina = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+name: 1
+class: middle, left
+<br><br><br><br><br><br><br>
+# Statistik 1
+## Seminar
+***
+### Einheit 1
+##### `r format(as.Date(data.frame(readxl::read_excel("CFH_Statistik_1_Seminar_Termine.xlsx"))$Datum), "%d.%m.%Y")[1]` | Janika Saretzki, MSc. 
+
+---
+name: 2
+class: top, left
+### Kontakt
+
+<div style="font-size: 90%;">
+
+.pull-left[
+**Janika Saretzki, MSc.**
+
+<br>
+
+Lehrstuhl für Psychologische Methodenlehre
+
+Infanteriestraße 11a · 80797 München  
+
+[janika.saretzki@charlotte-fresenius-uni.de](mailto:janika.saretzki@charlotte-fresenius-uni.de)
+
+***
+
+Zoom-Sprechstunde (bitte per E-Mail anmelden):  
+
+Meeting-ID: 581 191 5591  
+Kenncode: 975646
+
+***
+
+[Publikationen](https://scholar.google.com/citations?user=rPtq3d8AAAAJ&hl=de&oi=ao)  
+[Commitment to Research Transparency](http://www.researchtransparency.org)
+]
+
+.pull-right[
+.center[
+<br><br><br>
+.bottom[![](rtransperency.png)]
+]
+]
+
+</div>
+
+---
+name: 3
+class: top, left, smaller
+### Kurzvorstellung
+
+<div style="font-size: 90%;">
+
+.pull-left[
+**Janika Saretzki, MSc.**
+]
+
+<br><br>
+
+<div style="clear: both;"></div>
+
+**Akademische Laufbahn**  
+- <u>Seit 10/2023: Wissenschaftliche Mitarbeiterin,</u> Institut für Psychologie, Lehrstuhl für Psychologische Methodenlehre, Charlotte Fresenius Hochschule München, Deutschland
+
+- <u>Seit 05/2023: Gastwissenschaftlerin,</u> Institut für Psychologie, Lehrstuhl für Psychologische Methodenlehre und Diagnostik, Ludwig-Maximilians-Universität München, Deutschland
+
+- <u>Seit 09/2022: Projektmitarbeiterin und Doktorandin,</u> Institut für Psychologie, Lehrstuhl für Differentielle Psychologie (Creative Cognition Lab), Karl-Franzens-Universität Graz, Österreich
+
+<br>
+
+**Forschungsschwerpunkte**  
+- Psychometrische Erfassung kreativen Potenzials
+- Unterstützung bei Forschungsfragen in Klinischer Psychologie und Psychotherapie
+
+</div>
+
+---
+name: 4
+class: center, middle
+# Organisatorisches
+
+---
+name: 5
+class: top, left
+### Seminaraufbau
+
+**Geblocktes Seminar mit insgesamt 5 Einheiten zu je 1.5 Stunden**
+<br><br><br>
+**Ziel**  
+<u>Vertiefung und Anwendung</u> der in der Vorlesung erlernten Inhalte
+<br><br>
+<p><strong>Ablauf</strong></p>
+<ul style="margin-top: -10px;">
+  <li>Eigenständiges Rechnen</li>
+  <li>Gemeinsame Besprechung der Aufgaben im Plenum</li>
+  <li>Mischung aus:
+    <ul>
+      <li>Händischen Berechnungen</li>
+      <li>Interpretation von R-Outputs</li>
+    </ul>
+  </li>
+  <li>Bereitstellung von Musterlösungen auf studynet</li>
+</ul>
+<br>
+<div style="text-align: center;">
+<strong>Wichtig:</strong>
+Wiederholen Sie die Vorlesungsinhalte der vorangegangenen Woche <strong>vor</strong> dem Seminar!<br>
+Nur so profitieren Sie bestmöglich von den Übungen.
+
+</div>
+
+---
+name: 6
+class: top, left
+### Benötigte Materialien
+<br>
+- Laptop oder Tablet zur Ansicht der Übungsfolien (studynet)
+- Übungsaufgaben der jeweiligen Woche (studynet)
+- Papier und Stift **oder** Tablet für händische Berechnungen
+- Nicht-programmierbarer Taschenrechner
+- Formelsammlung (studynet)
+- 🧠 Motivation und hohe Frustrationstoleranz  
+
+<br>
+
+**Vertieftes Üben**  
+- Folien ersetzen nicht den Vorlesungs- bzw. Seminarbesuch
+- Learnr-Übungsaufgaben, Statistik-Trainer (studynet)
+
+---
+name: 7
+class: top, left
+### Hausaufgaben & Tutorium
+
+**Hausaufgaben**  
+- Bereitstellung von Aufgaben zum jeweiligen Thema (studynet)
+- Optional, kein Teil der **Studienleistung**
+- Zur Klausurvorbereitung dringend empfohlen!
+- Musterlösungen werden auf studynet hochgeladen
+
+<br>
+
+**Tutorium**  
+- Findet am Ende des Semesters statt
+- Inhalte:
+  - Wiederholung von Vorlesungs- und Seminarinhalten
+  - Händisches Rechnen der behandelten Aufgabenformate
+- Termine werden noch bekannt gegeben  
+  (voraussichtlich zwei Blöcke à 5 Stunden)
+
+---
+name: 8
+class: top, left
+### Termine
+<br><br><br><br>
+**Einheit 1  02.05.25  14:45-16:15 Uhr  A + B  HS Audimax / P3**  
+**Einheit 2  15.05.25  13:05-15:30 Uhr  A + B  HS Audimax / P3**  
+<br>
+**Einheit 3**  12.06.25  13:05-15:30 Uhr  A    HS P5 005  
+**Einheit 3**  13.06.25  13:50-16:15 Uhr  B    HS P1 105  
+<br>
+**Einheit 4**  26.06.25  13:05-15:30 Uhr  A    HS P5 005  
+**Einheit 4**  27.06.25  13:50-16:15 Uhr  B    HS P1 105 
+<br><br>
+**Einheit 5**  17.07.25  13:05-15:30 Uhr  A    HS P5 005  
+**Einheit 5**  18.07.25  13:50-16:15 Uhr  B    HS P1 105  
+
+---
+name: 9
+class: top, left
+### Prüfungsleistung
+
+**Klausur (90 Minuten)**
+- 1/3 geschlossene Fragen (z.B. Multiple Choice)
+- 2/3 offene Fragen und Rechenaufgaben
+- Taschenrechner erforderlich!
+- Formelsammlung:
+  - Gedruckte Version wird gestellt
+  - Zusätzlich eigene handgeschriebene Formelsammlung erlaubt
+<br><br>
+
+**Studienleistung**
+- Im Rahmen des Seminars sind fünf Studienleistungen zu bearbeiten
+- Jede Studienleistung ist bis spätestens zum Tag vor dem jeweils nächsten Seminartermin einzureichen
+- Einreichung per E-Mail an [janika.saretzki@charlotte-fresenius-uni.de](mailto:janika.saretzki@charlotte-fresenius-uni.de)
+- Musterlösungen werden nach Abgabe auf studynet bereitgestellt
+<br><br>
+
+<p style="text-align: center;"><strong>→ Zum Bestehen des Moduls ist das erfolgreiche Absolvieren <br>
+aller fünf Studienleistungen und der Klausur erforderlich!</strong></p>
+
+---
+name: 10
+class: top, left
+### Hinweise zu Rechenaufgaben
+
+<small>
+
+- **Endergebnis** (auf **2 Nachkommastellen** gerundet) zählt für die Benotung  
+  - Ganze Zahlen müssen **nicht** künstlich auf zwei Nachkommastellen erweitert werden (z.B. `12` statt `12.00`)
+  - Rechenweg aufschreiben empfohlen → ermöglicht Teilpunkte bei Fehlern
+
+<br>
+
+- **Umgang mit Nachkommastellen bei Zwischenergebnissen**  
+  - a) Exakte Zahlen weiterverwenden (z.B. Zwischenergebnis direkt im Taschenrechner speichern)  
+  - b) Zwischenergebnis auf **zwei Nachkommastellen runden**  
+    - ab `x.xx45` wird aufgerundet  
+    - unter `x.xx45` wird abgerundet
+
+  → **Wichtig:** Innerhalb einer Aufgabe eine Methode wählen und konsistent bleiben!  
+  → Bei Rechenwegsangabe: kurz notieren, ob exakte oder gerundete Werte verwendet wurden.
+
+<br>
+
+**Beispielaufgabe**  
+$7 \div 3 \times 1000$
+
+- Mit exakten Zahlen: $2333{.}33$
+- Mit gerundetem Zwischenschritt: $2330$ oder $2330{.}00$  
+  (Schritt 1: $7 \div 3 = 2{.}33$, Schritt 2: $2{.}33 \times 1000$)
+
+→ **Beide Ergebnisse sind korrekt!**
+
+</small>
+
+---
+name: 11
+class: top, left
+### APA-konforme Angabe von Statistiken
+<br>
+- APA = American Psychological Association
+- Internationale Fachgesellschaft für Psychologie
+- Gibt offizielle Publikationsrichtlinien heraus (derzeit: 7. Auflage, 2020)
+- Richtlinien betreffen u.a. Zitierweise, Formatierung von Texten, Darstellung von Tabellen, Abbildungen
+<br><br>
+- In der Praxis: Formatvorgaben variieren je nach Fachzeitschrift oder Verlag
+- An der Hochschule wird APA als **Standard für Seminar- und Abschlussarbeiten verwendet**
+<br><br>
+
+**Warum APA-Richtlinien?**
+- Einheitliche und transparente Darstellung wissenschaftlicher Ergebnisse
+- Erleichtert das Lesen, Verstehen und Vergleichen von Studien
+- Weit verbreiteter Standard in der Psychologie und angrenzenden Fächern
+<br><br>
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://apastyle.apa.org" target="_blank" style="font-size: 18px;">
+    → Zur offiziellen <strong>APA Website</strong>
+  </a>
+</div>
+
+---
+name: 12
+```{r PES Setup, include=FALSE}
+
+pdf_path = "PES_Folien_PP.pdf"
+
+for (i in 2:3) {
+  img = image_read_pdf(pdf_path, pages = i, density = 300)
+  image_write(img, path = paste0("slide", i, ".png"), format = "png")
+}
+
+```
+
+class: center, middle
+
+![](slide2.png)
+
+---
+name: 13
+class: center, middle
+
+![](slide3.png)
+
+---
+name: 14
+class: center, middle
+# Wiederholung
+
+---
+name: 15
+class: top, left
+### Wiederholung
+
+<br><br><br>
+
+<div style="border: 3px solid #621C37; padding: 10px; font-weight: bold; font-size: 110%; width: 80%;">
+Deskriptive Statistik
+</div>
+
+<br>
+
+<div style="border: 3px solid #621C37; padding: 10px; font-weight: bold; font-size: 110%; width: 80%;">
+Häufigkeiten
+</div>
+
+<br>
+
+<div style="border: 3px solid #621C37; padding: 10px; font-weight: bold; font-size: 110%; width: 80%;">
+Maße der zentralen Tendenz
+</div>
+
+---
+name: 16
+class: top, left
+### Deskriptive Statistik
+
+<br>
+
+#### Was macht Deskriptive Statistik?
+
+- Bereitet Informationen über erfasste Merkmale auf
+- Einzelwerte werden zu statistischen Kennwerten **zusammengefasst**
+- Ziel: Beschreibung der Daten mittels Kennwerten, Graphiken, Tabellen, Diagrammen
+- Bezieht sich auf die  konkret untersuchte Stichprobe
+
+<br>
+
+#### Beispiele
+
+-  Betrachtung der Verteilung von Häufigkeiten
+-  Maße der zentralen Tendenz
+  - Modalwert, Median, Mittelwert
+-  Streuungsmaße
+  - Varianz, Standardabweichung, Quartilabstand
+  
+---
+name: 17
+class: top, left
+### Häufigkeiten
+
+<br><br>
+
+- Ziel: Daten effizient zusammenfassen
+- Häufigkeit: Anzahl der Ausprägungen eines Merkmals
+- z.B. zur Beschreibung der Stichprobe in klinischer Studie
+- Man unterscheidet **absolute** $(n)$ vs. **relative** $(\%)$ Häufigkeit (vs. **kumulierte** Häufigkeit)
+
+<br>
+
+- Absolute und relative Häufigkeit **beide wichtig** für das Verständnis von Daten
+- **In Publikationen** werden i.d.R. beide angegeben und oft im Format $n (\%)$ berichtet
+
+<br>
+
+- Kumulierte Häufigkeit: Aufsummierte Werte der Häufigkeiten bis zu einer bestimmten Kategorie
+- Kumulierte Häufigkeit zeigt, wie viele Fälle bis zu einer bestimmten Ausprägung erreicht wurden
+
+---
+name: 18
+class: top, left
+### Häufigkeiten 
+<br><br>
+```{r Häufigkeiten, echo=FALSE, fig.height=6, fig.width=15, dpi=300, message=FALSE, warning=FALSE}
+
+par(mfrow = c(1, 3),
+    mar = c(5, 5.5, 4, 2),
+    cex.axis = 1.8,
+    cex.lab  = 1.8,
+    cex.main = 1.8,
+    xaxs = "i")  
+
+werte <- c(15, 30, 10, 25, 20)  
+kategorien <- 1:5
+gesamt <- sum(werte)
+prozente <- werte / gesamt * 100
+kumuliert <- cumsum(prozente)
+
+space <- 0.3
+xlim_set <- c(0, 7)
+
+# Absolute Häufigkeit
+bp1 <- barplot(werte,
+               names.arg = FALSE,  
+               col = "white",
+               border = "black",
+               ylim = c(0, 35),
+               xlim = xlim_set,
+               xlab = "k",
+               ylab = "Absolute Häufigkeit",
+               main = "Absolute Häufigkeit",
+               space = space)
+axis(1, at = bp1, labels = kategorien)
+abline(h = 0, col = "black", lwd = 1)
+
+# Relative Häufigkeit
+bp2 <- barplot(prozente,
+               names.arg = FALSE,
+               col = "white",
+               border = "black",
+               ylim = c(0, 100),
+               xlim = xlim_set,
+               xlab = "k",
+               ylab = "Relative Häufigkeit (%)",
+               main = "Relative Häufigkeit",
+               space = space)
+
+axis(1, at = bp2, labels = kategorien)
+abline(h = 0, col = "black", lwd = 1)
+
+# Kumulierte relative Häufigkeit
+bp3 <- barplot(kumuliert,
+               names.arg = FALSE,
+               col = "white",
+               border = "black",
+               ylim = c(0, 100),
+               xlim = xlim_set,
+               xlab = "k",
+               ylab = "Kumulierte relative Häufigkeit",
+               main = "Kumulierte relative Häufigkeit",
+               space = space)
+
+axis(1, at = bp3, labels = kategorien)
+abline(h = 0, col = "black", lwd = 1)
+
+
+```
+
+---
+name: 19
+class: top, left
+### Maße der zentralen Tendenz
+
+<div style="font-size: 67%;">
+.pull-left[
+
+**Median**<br>
+Wert, der eine Datenreihe in zwei gleich große Hälften teilt<br> 
+→ Wert in der Mitte einer Verteilung
+
+<div style="font-size: 82%; border: 2px solid #621C37; padding: 10px; display: inline-block;">
+$$
+Mdn =
+\begin{cases}
+\frac{x_{(\frac{n}{2})} + x_{(\frac{n}{2} + 1)}}{2} & \text{falls } n \text{ gerade} \\
+x_{(\frac{n+1}{2})} & \text{falls } n \text{ ungerade}
+\end{cases}
+$$
+</div>
+
+
+<br>
+
+**Modus / Modalwert** <br>
+Der/die am häufigsten vorkommende/n Wert/e einer Verteilung
+
+]
+
+.pull-right[
+
+**Arithmetisches Mittel / Mittelwert** <br>
+Durchschnittswert einer Verteilung
+
+<div style="font-size: 80%; border: 2px solid #621C37; padding: 10px; margin-bottom: 10px;">
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+</div>
+
+<div style="font-size: 80%; border: 2px solid #621C37; padding: 10px; margin-bottom: 10px;">
+$$
+\bar{x} = \frac{1}{n} \sum_{j=1}^{k} x'_j \cdot f_j
+$$
+</div>
+
+<div style="font-size: 80%; display: flex; align-items: center; gap: 8px;">
+  <span style="min-width: 60px;">\( x'_j \)</span>
+  = mögliche Merkmalsausprägungen
+</div>
+
+<div style="font-size: 80%; display: flex; align-items: center; gap: 8px;">
+  <span style="min-width: 60px;">\( f_j \)</span>
+  = absolute Häufigkeit der jeweiligen Merkmalsausprägung
+</div>
+<br><br>
+<div style="font-size: 80%; border: 2px solid #621C37; padding: 10px; margin-bottom: 10px;">
+$$
+  \bar{x} = \frac{n_1 \cdot \bar{x}_1 + n_2 \cdot \bar{x}_2}{n_1 + n_2}
+$$
+</div>
+
+
+<div style="font-size: 90%;">
+→ Gemeinsamer Mittelwert über zwei Gruppen / Teilstichproben
+</div>
+
+]
+
+</div>
+
+---
+name: 20
+class: center, middle
+# Übungsaufgaben
+
+---
+name: 21
+class: top, left, smaller
+### Übungsaufgabe 1
+
+**Manuel hat vergangene Woche sein Abschlusszeugnis erhalten.**  
+Das Zeugnis beinhaltet folgende Noten:  
+`1, 2, 4, 1, 3, 3, 4, 2, 3, 2, 3, 1`
+
+<br>
+
+**Fragestellung:**  
+a) Was sind die absolute und relative Häufigkeit der Note **1**?  
+b) Was sind die absolute und relative Häufigkeit der Note **4**?  
+c) Was sind die absolute und relative Häufigkeit der Note **3**?
+
+<br>
+
+**Auftrag:**  
+Erstellen Sie  
+- eine **geordnete Urliste** und  
+- eine **tabellarische Übersicht**,  
+welche die **absoluten**, **relativen** und **kumulierten Häufigkeiten** enthält.
+
+<br>
+
+Bitte beantworten Sie die Teilfragen in **ganzen Sätzen**.
+
+---
+name: 22
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+#### 1. Aufgabe
+
+**1. Schritt: geordnete Urliste:**  
+1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4
+<br> → *N* = 12
+<br><br><br>
+**2. Schritt: Ermittlung der absoluten und relativen Häufigkeiten**
+
+**a) Absolute und relative Häufigkeit der Note 1:**
+- absolute Häufigkeit der Note 1: H(1) = 3  
+- relative Häufigkeit: $\frac{\text{absolute Häufigkeit}}{\text{Gesamtanzahl}} = \frac{3}{12} = 0{.}250 = 25.0\%$
+
+Die Note 1 wurde in Manuels Zeugnis insgesamt dreimal vergeben, was einem relativen Anteil von 25.0% entspricht.
+
+---
+name: 23
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+**b) Absolute und relative Häufigkeit der Note 4:**
+
+- absolute Häufigkeit der Note 4: H(4) = 2  
+- relative Häufigkeit: $\frac{2}{12} = 0{.}167 = 16{.}7\%$
+
+Die Note 4 wurde in Manuels Zeugnis insgesamt zweimal vergeben, was einem relativen Anteil von 16.7% entspricht.
+
+<br>
+
+**c) Absolute und relative Häufigkeit der Note 3:**
+
+- absolute Häufigkeit der Note 3: H(3) = 4  
+- relative Häufigkeit: $\frac{4}{12} = 0{.}333 = 33{.}3\%$
+
+Die Note 3 wurde in Manuels Zeugnis insgesamt viermal vergeben, was einem relativen Anteil von 33.3% entspricht.
+
+---
+name: 24
+class: top, left
+### Übungsaufgabe 1 - Lösung
+
+**Tabellarische Übersicht der absoluten, relativen und kumulierten Häufigkeit**
+<br><br>
+```{r Tabelle 1 Aufgabe 1i, echo=FALSE, results='asis'}
+
+noten = c(1, 2, 4, 1, 3, 3, 4, 2, 3, 2, 3, 1)
+tab = table(noten)
+rel = prop.table(tab) * 100
+kum = cumsum(rel)
+
+rel_fmt = ifelse(rel == 100, "100%", gsub("\\.", ",", sprintf("%.1f%%", rel)))
+kum_fmt = ifelse(kum == 100, "100%", gsub("\\.", ",", sprintf("%.1f%%", kum)))
+
+df = data.frame(
+  Merkmal = as.numeric(names(tab)),
+  `Absolute Häufigkeiten` = as.vector(tab),
+  `Relative Häufigkeiten` = rel_fmt,
+  `Kumulierte Häufigkeiten` = kum_fmt
+)
+
+kable(df, format = "html", booktabs = TRUE, align = "c",
+      escape = FALSE,
+      table.attr = 'style="margin-left: 0;"',  
+      col.names = c(
+        "Zeugnisnoten",
+        "Absolute Häufigkeiten",
+        "Relative Häufigkeiten",
+        "Kumulierte Häufigkeiten"
+      )) %>%
+  kable_styling(full_width = FALSE,
+                html_font = "Arial", font_size = 15,
+                position = "left",
+                bootstrap_options = c("striped"))  
+
+```
+
+---
+name: 25
+class: top, left
+### Übungsaufgabe 1 - Lösung
+
+**Tabellarische Übersicht der absoluten, relativen und kumulierten Häufigkeit**
+<br><br>
+```{r Tabelle 1 Aufgabe 1, echo=FALSE, results='asis'}
+
+noten = c(1, 2, 4, 1, 3, 3, 4, 2, 3, 2, 3, 1)
+tab = table(noten)
+rel = prop.table(tab) * 100
+kum = cumsum(rel)
+
+rel_fmt = ifelse(rel == 100, "100%", gsub("\\.", ",", sprintf("%.1f%%", rel)))
+kum_fmt = ifelse(kum == 100, "100%", gsub("\\.", ",", sprintf("%.1f%%", kum)))
+
+df = data.frame(
+  Merkmal = as.numeric(names(tab)),
+  `Absolute Häufigkeiten` = as.vector(tab),
+  `Relative Häufigkeiten` = rel_fmt,
+  `Kumulierte Häufigkeiten` = kum_fmt
+)
+
+kable(df, format = "html", booktabs = TRUE, align = "c",
+      escape = FALSE,
+      table.attr = 'style="margin-left: 0;"',  
+      col.names = c(
+        "Zeugnisnoten",
+        "Absolute Häufigkeiten",
+        "Relative Häufigkeiten",
+        "Kumulierte Häufigkeiten"
+      )) %>%
+  kable_styling(full_width = FALSE,
+                html_font = "Arial", font_size = 15,
+                position = "left",
+                bootstrap_options = c("striped"))  
+
+```
+<br>
+```{r Tabelle 1 Aufgabe 1 APA, echo=FALSE, results='asis'}
+
+noten = c(1, 2, 4, 1, 3, 3, 4, 2, 3, 2, 3, 1)
+tab = table(noten)
+rel = prop.table(tab) * 100
+kum = cumsum(rel)
+
+rel_fmt = ifelse(rel == 100, "100%", sprintf("%.1f%%", rel))
+kum_fmt = ifelse(kum == 100, "100%", sprintf("%.1f%%", kum))
+
+df = data.frame(
+  `Zeugnisnoten` = as.numeric(names(tab)),
+  `Absolute Häufigkeiten` = as.vector(tab),
+  `Relative Häufigkeiten` = rel_fmt,
+  `Kumulierte Häufigkeiten` = kum_fmt
+)
+
+cat('<div style="font-family: Arial; font-size: 12pt; text-align: left; width: fit-content; line-height: 1.6;">')
+cat('<strong style="display: block; margin-bottom: 4px;">Tabelle 1</strong>')
+cat('<em style="display: block; margin-bottom: 10px;">Absolute, relative und kumulierte Häufigkeiten der Zeugnisnoten</em>')
+
+
+
+kable(df, format = "html", booktabs = TRUE, align = "c",
+      escape = FALSE,
+      table.attr = 'style="margin: 0;"',  
+      col.names = c(
+        "Zeugnisnoten",
+        "Absolute Häufigkeiten",
+        "Relative Häufigkeiten",
+        "Kumulierte Häufigkeiten"
+      )) %>%
+  kable_styling(full_width = FALSE,
+                html_font = "Arial", font_size = 15,
+                bootstrap_options = NULL) %>%
+  row_spec(0, bold = TRUE, background = "white", color = "black",
+           extra_css = "border-bottom: 0.5px solid black;") %>%
+  row_spec(1:nrow(df), background = "white", color = "black") %>%
+  column_spec(1:ncol(df), extra_css = "border-left: none; border-right: none;")
+
+cat('</div>')
+
+```
+
+---
+name: 26
+### Übungsaufgabe 2
+
+a) Bilden Sie die **Summe** für die Variable „absolvierte Klausuren“  
+&ensp;&ensp;&nbsp;&nbsp;(Verwendung **korrekter Notation**!)
+
+b) Bilden Sie die Summe für die **ersten 4 Personen** der Variable  
+&ensp;&ensp;&nbsp;&nbsp;„absolvierte Klausuren“ mit **entsprechender Formelnotation**.
+
+c) Bilden Sie die Summe für die **letzten 3 Personen** der Variable  
+&ensp;&ensp;&nbsp;&nbsp;**absolvierte Klausuren** mit **entsprechender Formelnotation**.
+
+d) Wie hoch ist der **relative Anteil** an **weiblichen Studentinnen**  
+&ensp;&ensp;&nbsp;&nbsp;in der Stichprobe?
+
+e) Berechnen Sie die Lösung für folgende Formel für die Variable  
+&ensp;&ensp;&nbsp;&nbsp;**absolvierte Klausuren**:
+
+$$
+\sum_{i=1}^{10} (96 - Z_i)
+$$
+
+
+```{r Dataframe 1, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+                 col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 140px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+cat('<p style="font-size: 14px; margin-top: 10px;">
+       Hinweis: Die Variable <strong>Geschlecht (X)</strong> ist als Faktor kodiert: 
+       1 = weiblich, 2 = männlich.
+     </p>')
+
+
+```
+
+---
+name: 27
+### Übungsaufgabe 2 - Lösung
+
+.smallest[
+
+**a)** $\displaystyle \sum_{i=1}^{10} Z_i = 2 + 5 + 1 + 2 + 0 + 0 + 0 + 2 + 4 + 5 = 21$  
+<br>
+**b)** $\displaystyle \sum_{i=1}^{4} Z_i = 2 + 5 + 1 + 2 = 10$  
+<br>
+**c)** $\displaystyle \sum_{i=8}^{10} Z_i = 2 + 4 + 5 = 11$  
+<br>
+**d)** Weiblich (X = 1): 1, 1, 1, 1, 1, 1 → Anzahl = 6  
+
+$\displaystyle \frac{6}{10} = 0{.}600 = 60.0\,\%$  
+
+Der relative Anteil der weiblichen Studentinnen an der Gesamtgruppe liegt bei 60.0%.
+
+]
+
+---
+name: 28
+class: top, left
+### Übungsaufgabe 2 - Lösung
+<br><br><br><br><br><br>
+.smallest[
+**e)** $\displaystyle \sum_{i=1}^{10} (96 - Z_i) =$  
+
+$(96{-}2) + (96{-}5) + (96{-}1) + (96{-}2) + (96{-}0) + (96{-}0) + (96{-}0) + (96{-}2) + (96{-}4) + (96{-}5) = 939$
+
+]
+
+---
+name: 29
+### Übungsaufgabe 3
+
+a) Welches **Skalenniveau** haben **Geschlecht**, **Alter** und **absolvierte Klausuren**?
+
+<br>
+
+b) Stellen Sie fest, ob es sich um eine **gerade oder ungerade** Anzahl<br>
+&ensp;&ensp; an Beobachtungen handelt.
+
+<br>
+
+c) Ordnen Sie die **Urliste** für das **Alter**.
+
+<br>
+
+d) Ermitteln Sie den **Median** für die Variable **Alter**.
+
+<br>
+
+e) Ermitteln Sie den/die **Modalwert/e** für die Variable **absolvierte Klausuren**.
+
+f) Ermitteln Sie das **arithmetische Mittel** für die Variable **absolvierte Klausuren**.
+
+```{r Dataframe 2, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+               col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 170px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+```
+
+---
+name: 30
+### Übungsaufgabe 3 – Lösung
+
+**a)** Geschlecht = **Nominalskala**,  Alter & absolvierte Klausuren = **Verhältnisskala** (metrisch)
+
+**b)** $N = 10$ → **gerade**
+
+**c)** Geordnete Urliste (Alter):  18, 19, 20, 21, 22, 25, 26, 27, 30, 32
+
+<br>
+
+**d)**  $\displaystyle Mdn = \frac{x_({\frac{n}{2}}) + x_({\frac{n}{2} + 1})}{2} = \frac{x_5 + x_6}{2} = \frac{22 + 25}{2} = 23{.}5$
+
+<br>
+
+**e)** Modalwerte der **absolvierten Klausuren**: **0** und **2**
+
+<br>
+
+**f)**  $\displaystyle \frac{\sum\limits_{i=1}^{n} Z_i}{n} = \frac{21}{10} = 2{.}10$
+
+```{r Dataframe 2 Lösung, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+               col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 170px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+```
+
+---
+name: 31
+### Übungsaufgabe 4
+
+a) Wie verändert sich der Median  
+&ensp;&ensp;&ensp;&ensp;nach einer zusätzlichen Beobachtung von **Alter = 33**?
+
+<br>
+
+b) Visualisieren Sie die Verteilung der **relativen Häufigkeiten**  
+&ensp;&ensp;&ensp;&ensp;von **absolvierte Klausuren** als **Histogramm**.
+
+<br>
+
+c) Was wäre eine **charakteristische Beschreibung** der Verteilung?
+
+<br>
+
+d) Zu welchem Wert addiert sich die **Gesamtfläche des Histogramms**?
+
+<br>
+
+e) Warum würde man eine entsprechende Visualisierung  
+&ensp;&ensp;&ensp;&ensp;für das **Geschlecht** als **Balkendiagramm** zeichnen?
+<br>
+
+
+```{r Dataframe 2b, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+               col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 170px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+```
+
+---
+name: 32
+### Übungsaufgabe 4 – Lösung
+
+<br><br><br>
+
+**a)** Neue geordnete Urliste: 18, 19, 20, 21, 22, 25, 26, 27, 30, 32, 33  
+<br>
+$N = 11$ → ungerade  
+<br>
+$\displaystyle Mdn = x_{\frac{n + 1}{2}} = x_6 = 25.0$
+
+
+```{r Dataframe 2b Lösung, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+               col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 170px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+```
+
+---
+name: 33
+### Übungsaufgabe 4 – Lösung
+
+**b)** Verteilung von „absolvierte Klausuren“ als Histogramm 
+(relative Häufigkeiten)
+<br><br><br>
+```{r Aufgabe 4 Histogramm, echo=FALSE, fig.height=5, fig.width=5, dpi=300, out.width="35%", message=FALSE, warning=FALSE}
+
+z <- c(2,5,1,2,0,0,0,2,4,5)
+df <- data.frame(z = z)
+
+ggplot(df, aes(x = z)) +
+  geom_histogram(
+    aes(y = after_stat(count / sum(count))),  
+    binwidth = 1,
+    boundary = -0.5,
+    fill = "white",
+    color = "black"
+  ) +
+  labs(
+    x = "Absolvierte Klausuren",
+    y = "Relative Häufigkeit"
+  ) +
+  scale_x_continuous(breaks = 0:5) +
+  scale_y_continuous(
+    limits = c(0, 0.35),
+    breaks = seq(0, 0.35, by = 0.05),
+    expand = c(0, 0)
+  ) +
+  theme_minimal(base_size = 16) +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "black"),
+    axis.ticks = element_line(color = "black")
+  )
+
+```
+
+```{r Dataframe 2.2b Lösung, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+
+df = data.frame(
+  ID = 1:10,
+  `Geschlecht (X)` = c(1,1,2,2,1,1,1,2,2,1),
+  `Alter (Y)` = c(21,22,20,19,18,25,27,30,26,32),
+  `absolvierte Klausuren (Z)` = c(2,5,1,2,0,0,0,2,4,5)
+)
+
+table = kable(df, "html", booktabs = TRUE, align = "c",
+               col.names = c("ID", "Geschlecht (X)", "Alter (Y)", "absolvierte Klausuren (Z)")) %>%
+  kable_styling(full_width = TRUE,
+                html_font = "Arial", font_size = 16,
+                bootstrap_options = c("striped", "condensed"))
+
+cat(sprintf('<div style="position: absolute; top: 170px; right: 100px; width: 340px; font-size: 16px;">%s</div>', table))
+
+```
+
+---
+name: 34
+### Übungsaufgabe 4 – Lösung
+<br><br><br>
+**c)** Bimodal / zweigipflig, leicht linksschief
+
+<br>
+
+**d)** Gesamtfläche = **1**
+
+<br>
+
+**e)** **Kategorien** auf der x-Achse → daher **Balkendiagramm** (nicht Histogramm)
+
+<br>
+
+---
+name: 35
+class: center, middle
+# Herzlichen Dank für Ihre Aufmerksamkeit!

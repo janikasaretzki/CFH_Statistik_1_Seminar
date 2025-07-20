@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Einheit 3</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Janika Saretzki" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#EE0071"],"pen_size":4,"eraser_size":40,"palette":[]}) })</script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+name: 1
+class: middle, left
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# Statistik 1
+## Seminar
+***
+### Einheit 3
+##### 13.06.2025 | Janika Saretzki, MSc. 
+
+---
+name: 2
+class: top, left
+
+### Termine
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+~~**Einheit 1  02.05.25  14:45-16:15 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+~~**Einheit 2  15.05.25  13:05-15:30 Uhr  A + B  HS Audimax / P3**~~&lt;br&gt;
+&lt;br&gt;
+**Einheit 3**  12.06.25  13:05-15:30 Uhr  A    HS P5 005  
+**Einheit 3**  13.06.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt;
+&lt;br&gt;
+**Einheit 4**  26.06.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 4**  27.06.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt; 
+&lt;br&gt;
+**Einheit 5**  17.07.25  13:20-15:45 Uhr  A    HS P5 005  
+**Einheit 5**  18.07.25  13:50-16:15 Uhr  B    HS P1 105&lt;br&gt;
+
+---
+name: 3
+class: top, left, smallest
+
+### Taschenrechner-Hacks
+
+&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; x₁ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₂ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₃ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₄ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₅ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₆ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₇ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₈ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₉ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₀ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₁ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₂ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₃ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₄ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₅ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₆ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; x₁₇ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 57 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 58 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 72 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 57 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 57 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 72 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 66 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div style='margin-bottom: 20px;'&gt;&lt;/div&gt;&lt;table class="table" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; y₁ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₂ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₃ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₄ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₅ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₆ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₇ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₈ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₉ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₀ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₁ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₂ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₃ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₄ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₅ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₆ &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; y₁₇ &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 51 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 47 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 51 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 61 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 47 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 53 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 46 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 51 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 45 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Arithmetisches Mittel:&lt;/strong&gt; Mode → 2: STAT → Eine Gruppe: 1-VAR &lt;strong&gt;oder&lt;/strong&gt; zwei Gruppen: A+BX → Werte für Gruppe 1 und/oder Gruppe 2 eintragen (jeden Wert jeweils mit "Enter/=" bestätigen) → AC → Shift + 1 → 4: Var → 2: x̄ (Mittelwert für Gruppe x/1), 5: ȳ Mittelwert für Gruppe y/2 → "Enter/="&lt;br&gt;
+&lt;/span&gt;
+
+$$
+\small
+\bar{x} = 59.18, \quad \bar{y} = 51.71
+$$
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Standardabweichung auf Populationsebene:&lt;/strong&gt; Mode → 2: STAT → Eine Gruppe: 1-VAR &lt;strong&gt;oder&lt;/strong&gt; zwei Gruppen: A+BX → Werte für Gruppe 1 und/oder Gruppe 2 eintragen (jeden Wert jeweils mit "Enter/=" bestätigen) → AC → Shift + 1 → 4: Var → 4: sx (Standardabweichung auf Populationsebene für Gruppe x/1), 7: sy (Standardabweichung auf Populationsebene für Gruppe y/2) → "Enter/="
+&lt;/span&gt;
+
+$$
+\small
+\sigma_x = 7.02, \quad \sigma_y = 6.29
+$$
+
+---
+name: 4
+class: top, left, smallest
+
+### Taschenrechner-Hacks
+
+&lt;br&gt;&lt;br&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Median:&lt;/strong&gt; Mode → 2: STAT → Eine Gruppe: 1-VAR → Werte für Gruppe 1/Gruppe 2 eintragen (jeden Wert jeweils mit "Enter/=" bestätigen) → AC → Shift + 1 → 5: MinMax → 4: med → "Enter/="&lt;br&gt;
+&lt;/span&gt;
+
+$$
+\small
+\mathrm{Mdn}_x = 59{.}0,\quad \mathrm{Mdn}_y = 51{.}0
+$$
+&lt;br&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Unteres Quartil:&lt;/strong&gt; Mode → 2: STAT → Eine Gruppe: 1-VAR → Werte für Gruppe 1/Gruppe 2 eintragen (jeden Wert jeweils mit "Enter/=" bestätigen) → AC → Shift + 1 → 5: MinMax → 3: Q1 → "Enter/="&lt;br&gt;
+&lt;/span&gt;
+
+$$
+\small
+\mathrm{Q1}_x = 56{.}5,\quad \mathrm{Q1}_y = 46{.}5
+$$
+&lt;br&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Oberes Quartil:&lt;/strong&gt; Mode → 2: STAT → Eine Gruppe: 1-VAR → Werte für Gruppe 1/Gruppe 2 eintragen (jeden Wert jeweils mit "Enter/=" bestätigen) → AC → Shift + 1 → 5: MinMax → 5: Q3 → "Enter/="&lt;br&gt;
+&lt;/span&gt;
+
+$$
+\small
+\mathrm{Q3}_x = 63{.}0,\quad \mathrm{Q3}_y = 57{.}0
+$$
+---
+name: 5
+class: top, left, smaller
+
+### Wiederholung
+
+&lt;strong&gt;Logik des Schließens von Stichprobe auf Population&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div style="display: flex; justify-content: center;"&gt;
+  &lt;img src="Einheit_5.png" style="width: 40%;"&gt;
+&lt;/div&gt;
+
+---
+name: 6
+class: top, left, smaller
+
+### Wiederholung
+&lt;span style="font-size: 90%;"&gt;
+&lt;strong&gt;Psychologische Fragestellung:&lt;/strong&gt; Praktisch alle psychologischen Theorien erhalten Aussagen über Populationen (nicht nur über isolierte Stichproben). Zu ihrer empirischen Überprüfung sind dann immer &lt;strong&gt;inferenzstatistische Methoden&lt;/strong&gt; notwendig.&lt;/span&gt;
+
+&lt;span style="font-size: 90%;"&gt;
+Logik des Schließens von einer Stichprobe auf die Population: Inferenzstatistik (Grundlage: &lt;strong&gt;Wahrscheinlichkeitsrechnung&lt;/strong&gt;)&lt;/span&gt;
+
+
+&lt;span style="font-size: 90%;"&gt;&lt;strong&gt;Stochastik = Die Kunst des Vermutens (altgriechisch)&lt;/strong&gt;&lt;/span&gt;
+- &lt;span style="font-size: 90%;"&gt;Mathematik setzt Vorstellung von Zufall voraus (d.h. Modelle von Situationen, deren Ausgang ungewiss ist)&lt;br&gt;&lt;/span&gt;
+- &lt;span style="font-size: 90%;"&gt;Keine Einzelergebnisse vorhersagbar, aber: &lt;br&gt;
+→ Erkennen von Regelmäßigkeiten bei Vorgängen, deren Ergebnisse vom Zufall abhängen&lt;br&gt;&lt;/span&gt;
+
+- &lt;span style="font-size: 90%;"&gt;Zentraler Begriff &lt;strong&gt;Zufallsexperiment&lt;/strong&gt;&lt;/span&gt;
+  - &lt;span style="font-size: 90%;"&gt;Die Möglichen Ergebnisse eine Zufallsexperiments heißen &lt;strong&gt;Elementarereignisse&lt;/strong&gt;&lt;/span&gt;
+  - &lt;span style="font-size: 90%;"&gt;Die Menge aller möglichen Ergebnisse eines Zufallsexperiments bezeichnet man als &lt;strong&gt;Ergebnisraum&lt;/strong&gt;&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+    - &lt;span style="font-size: 90%;"&gt;Der Ergebnisraum heißt &lt;strong&gt;diskret&lt;/strong&gt;, wenn er aus abzählbar vielen Elementarereignissen besteht.&lt;/span&gt;
+    - &lt;span style="font-size: 90%;"&gt;Der Ergebnisraum heißt &lt;strong&gt;stetig&lt;/strong&gt;, wenn er aus überabzählbar vielen Elementarereignissen besteht.&lt;/span&gt;
+  
+&lt;/span&gt; 
+
+---
+name: 7
+class: top, left, smaller
+### Übungsaufgabe 1
+
+Unten sehen Sie drei Verteilungen. Bitte ordnen Sie folgende Begriffe der passenden Grafik zu:&lt;br&gt;
+**Binomialverteilung, Gleichverteilung, Normalverteilung.**&lt;br&gt;
+Bestimmen Sie außerdem, ob es sich um eine spezielle diskrete oder eine spezielle stetige Verteilung handelt.&lt;br&gt;&lt;br&gt;
+
+![](CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 1-1.png)&lt;!-- --&gt;
+
+&lt;!-- &lt;div style="font-size:0.8em; display:flex; justify-content:space-between; align-items:flex-start; gap:1em; margin-top:-3em;"&gt; --&gt;
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- P(X = x) = \frac{1}{m} \quad \text{für alle}\ x = 1,2, ..., m \\ --&gt;
+&lt;!-- E[X] = \frac{m+1}{2} \\ --&gt;
+&lt;!-- \sigma^2 = \frac{m^2-1}{12} --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- P(X = k) = {n \choose k} p^k (1-p)^{n-k} \quad \text{für}\ k = 0,1,...,n \\ --&gt;
+&lt;!-- E[X] = np \\ --&gt;
+&lt;!-- \sigma^2 = np(1-p) --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- \varphi(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{1}{2} \left( \frac{x-\mu}{\sigma} \right)^2 \right) --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;div style="margin-top: -60px;"&gt;
+  &lt;img src="Binomialverteilung_Gleichverteilung_Normalverteilung.png"&gt;
+&lt;/div&gt;
+
+---
+name: 8
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+
+Unten sehen Sie drei Verteilungen. Bitte ordnen Sie folgende Begriffe der passenden Grafik zu:&lt;br&gt;
+**Binomialverteilung, Gleichverteilung, Normalverteilung.**&lt;br&gt;
+Bestimmen Sie außerdem, ob es sich um eine spezielle diskrete oder eine spezielle stetige Verteilung handelt.&lt;br&gt;&lt;br&gt;
+
+![](CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 1b-1.png)&lt;!-- --&gt;
+
+&lt;!-- &lt;div style="font-size:0.8em; display:flex; justify-content:space-between; align-items:flex-start; gap:1em; margin-top:-3em;"&gt; --&gt;
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- P(X = x) = \frac{1}{m} \quad \text{für alle}\ x = 1,2, ..., m \\ --&gt;
+&lt;!-- E[X] = \frac{m+1}{2} \\ --&gt;
+&lt;!-- \sigma^2 = \frac{m^2-1}{12} --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- P(X = k) = {n \choose k} p^k (1-p)^{n-k} \quad \text{für}\ k = 0,1,...,n \\ --&gt;
+&lt;!-- E[X] = np \\ --&gt;
+&lt;!-- \sigma^2 = np(1-p) --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;!-- &lt;div style="width:32%;text-align:left;"&gt; --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- \varphi(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{1}{2} \left( \frac{x-\mu}{\sigma} \right)^2 \right) --&gt;
+&lt;!-- $$ --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
+&lt;div style="margin-top: -60px;"&gt;
+  &lt;img src="Binomialverteilung_Gleichverteilung_Normalverteilung.png"&gt;
+&lt;/div&gt;
+
+---
+name: 9
+class: top, left, smaller
+### Übungsaufgabe 1 - Lösung
+&lt;div style="flex: 1.4; font-size: 0.95em; line-height: 1.5; color: green;"&gt;
+&lt;u&gt;Gleichverteilung (diskrete Verteilung):&lt;/u&gt; Die Balken sind alle gleich hoch, d.h. jeder Wert ist gleich wahrscheinlich (z.B. fairer Würfel).
+&lt;br&gt;
+
+&lt;u&gt;Binomialverteilung (diskrete Verteilung):&lt;/u&gt; Beschreibt die Wahrscheinlichkeit, wie oft ein bestimmtes Ereignis in einer festen Anzahl von Versuchen vorkommen, wenn jeder Versuch nur zwei mögliche Ereignisse hat: Erfolg der Misserfolg. Die Verteilung ist symmetrisch bei p = 0.50.&lt;br&gt;
+- "Wie oft passiert etwas, wenn ich n mal probiere?"&lt;br&gt;
+- Wahrscheinlichkeiten ergeben sich aus "Anzahl Erfolge in n Versuchen"&lt;br&gt;
+- Zählbare Ereignisse!&lt;br&gt;
+
+Die Binomialverteilung ist oft die Grundlage für Tests und wird dann genähert an die Normalverteilung (binomiale Annahmen "im Hintergrund")
+&lt;br&gt;
+
+&lt;u&gt;Normalverteilung (stetige Verteilung):&lt;/u&gt; Die Kurve ist glockenförmig und symmetrisch um den Mittelwert&lt;br&gt;
+- Stetig, d.h. das Ergebnis kann jeden beliebigen Wert annehmen; glatt und glockenförmig&lt;br&gt;
+- Keine Balkendiagramm, sondern Dichtefunktion (durchgezogene Linie)&lt;br&gt;
+- "Wie ist etwas in der Natur verteilt?"&lt;br&gt;
+- Messbare, kontinuierliche Merkmale
+
+---
+name: 10
+class: top, left, smaller
+### Übungsaufgabe 2
+
+a) Warum handelt es sich bei der Standardnormalverteilung um eine spezielle Normalverteilung?&lt;br&gt;
+b) Wie kann eine Normalverteilung in eine Standardnormalverteilung überführt werden?
+&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 2-1.png" width="35%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+name: 11
+class: top, left, smaller
+### Übungsaufgabe 2 - Lösung
+
+a) Warum handelt es sich bei der Standardnormalverteilung um eine spezielle Normalverteilung?&lt;br&gt;
+b) Wie kann eine Normalverteilung in eine Standardnormalverteilung überführt werden?
+&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 2b-1.png" width="35%" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;div style="margin-left: 40%; margin-top: -38%; font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;u&gt;a) Mittelwert = 0, Standardabweichung = 1&lt;/u&gt;
+Jede Normalverteilung hat grundsätzlich irgendeinen Mittelwert und irgendeine Standardabweichung. Die Standardnormalverteilung ist genau die Normalverteilung, die auf 0 zentriert ist und eine "Standard Breite" von 1 hat → z-standardisierte Normalverteilung
+
+&lt;br&gt;
+&lt;u&gt;b) Standardisierung (z-Transformation)&lt;/u&gt;&lt;br&gt;
+
+$$
+\small
+z = \frac{x - \mu}{\sigma}
+$$
+
+&lt;li&gt; Von jedem x-Wert ziehen wir den Mittelwert ab (Verschiebung von M auf 0)&lt;/li&gt;
+&lt;li&gt; Dann teilen wir durch die Standardabweichung (Streuung wird auf 1 skaliert)&lt;/li&gt;
+&lt;li&gt; Jeder Wert bekommt einen z-Wert&lt;/li&gt;
+&lt;li&gt; Nach der Transformation ist die Verteilung eine Standardnormalverteilung
+  &lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 12
+class: top, left, smaller
+### Übungsaufgabe 3
+
+&lt;strong&gt;Unten sehen Sie zwei Glücksräder.&lt;/strong&gt;&lt;br&gt;
+&lt;br&gt;
+a) In welchem Fall macht die Berechnung einer Laplace-Wahrscheinlichkeit Sinn?&lt;br&gt;
+b) Wie ist die Zufallsvariable, eine bestimmte Farbe zu drehen, verteilt?&lt;br&gt;
+c) Wie hoch ist die Wahrscheinlichkeit, ein grünes (hell oder dunkel) Feld zu drehen?&lt;br&gt;
+
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+&lt;div style="text-align: center; margin-top: 1.2em; font-size: 50%;"&gt;
+$$
+P(A) = \frac{\text{Anzahl der } \omega \text{ in } A}{\text{Anzahl der } \omega \text{ in } \Omega}
+= \frac{\text{Anzahl der für A 'günstigen' Ereignisse}}{\text{Anzahl der möglichen Ereignisse}}
+$$
+&lt;/div&gt;
+
+---
+name: 13
+class: top, left, smaller
+### Übungsaufgabe 3 - Lösung
+
+&lt;strong&gt;Unten sehen Sie zwei Glücksräder.&lt;/strong&gt;&lt;br&gt;
+&lt;br&gt;
+a) In welchem Fall macht die Berechnung einer Laplace-Wahrscheinlichkeit Sinn?&lt;br&gt;
+b) Wie ist die Zufallsvariable, eine bestimmte Farbe zu drehen, verteilt?&lt;br&gt;
+c) Wie hoch ist die Wahrscheinlichkeit, ein grünes (hell oder dunkel) Feld zu drehen?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+a) Die Laplace-Wahrscheinlichkeit setzt voraus, dass alle Ausgänge gleich wahrscheinlich sind. Das ist nur dann der Fall, wenn alle Felder gleich groß sind, denn dann hat jede Farbe die gleiche Chance, getroffen zu werden. Das trifft auf &lt;u&gt;Glücksrad 1&lt;/u&gt; zu.
+&lt;br&gt;&lt;br&gt;
+b) Glücksrad 1: &lt;u&gt;Diskrete Gleichverteilung&lt;/u&gt;, da jede Farbe mit der gleichen Wahrscheinlichkeit auftreten kann. Bei Glücksrad 2 liegt keine Gleichverteilung vor, die Felder unterscheiden sich in ihrer Größe; einie Farben sind wahrscheinlicher als andere.
+&lt;br&gt;&lt;br&gt;
+c) Glücksrad 1 hat insgesamt 10 gleich große Felder, davon zwei grüne Felder (hell + dunkel):
+
+$$
+\small
+P(grün) = \frac{2}{10} = \frac{1}{5} = 0,2 
+$$
+Die Wahrscheinlichkeit, ein grünes Feld zu drehen, liegt bei 20%.&lt;br&gt;&lt;br&gt;
+  &lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 14
+class: top, left, smaller
+### Übungsaufgabe 4
+
+&lt;strong&gt;Sie untersuchen, ob das Geben eines Zuckerwürfels dazu führt, dass eine Ratte innerhalb von fünf Minuten hyperaktiv wird. Sie interessieren sich dafür, mit welcher Wahrscheinlichkeit dieses Verhalten nach der Zuckeraufnahme auftritt.&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+a) Warum handelt es sich hierbei um ein Zufallsexperiment?&lt;br&gt;
+b) Welche Zufallsvariable erkennen Sie in diesem Experiment und wie ist diese verteilt?&lt;br&gt;
+c) Ist der Ereignisraum diskret oder stetig?&lt;br&gt;
+d) Bestimmen Sie Erwartungswert und Varianz der Zufallsvariablen, wenn die Wahrscheinlichkeit, dass die Ratte nach fünf Minuten hyperaktiv wird, 85% beträgt.&lt;br&gt;
+e) Welche Verteilung würde man erhalten, würde das Experiment an mehreren Ratten durchgeführt werden?
+
+---
+name: 15
+class: top, left, smaller
+### Übungsaufgabe 4 - Lösung
+
+&lt;strong&gt;Sie untersuchen, ob das Geben eines Zuckerwürfels dazu führt, dass eine Ratte innerhalb von fünf Minuten hyperaktiv wird. Sie interessieren sich dafür, mit welcher Wahrscheinlichkeit dieses Verhalten nach der Zuckeraufnahme auftritt.&lt;/strong&gt;&lt;br&gt;
+
+a) Warum handelt es sich hierbei um ein Zufallsexperiment?&lt;br&gt;
+b) Welche Zufallsvariable erkennen Sie in diesem Experiment und wie ist diese verteilt?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+a) Im Prinzip beliebig oft wiederholbarer Vorgang, der nach bestimmter Vorschrift ausgeführt wird, wobei das Ergebnis vom Zufall abhängt, d.h. der Ausgang kann nicht eindeutig im Voraus bestimmt werden.&lt;br&gt;
+- Folge von gleichartigen, voneinander unabhängigen Versuchen möglich&lt;br&gt;
+- Entweder Folge voneinander unabhängiger Versuche mit einem Objekt oder jeweils einmaliger Versuch mit "gleichartigen" (unabhängigen) Objekten&lt;br&gt;
+- Ergebnis kann nicht sicher vorhergesagt werden; ist vom Zufall abhängig
+&lt;br&gt;
+
+b) Bernoulli-verteilte Zufallsvariable ("Ausgang des Experiments"), da zwei mögliche Ausgänge bei n = 1: Hyperaktiv vs. Nicht-Hyperaktiv. Eine Bernoulli-Verteilung ist die einfachste Wahrscheinlichkeitsverteilung für einen Zufallsversuch mit genau zwei möglichen Ausgängen: Erfolg (kodiert mit 1) und Misserfolg (kodiert mit 0) &lt;br&gt;
+→ Dichotome Zufallsvariable mit nur zwei möglichen Ausgängen
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 16
+class: top, left, smaller
+### Übungsaufgabe 4 - Lösung
+
+&lt;strong&gt;Sie untersuchen, ob das Geben eines Zuckerwürfels dazu führt, dass eine Ratte innerhalb von fünf Minuten hyperaktiv wird. Sie interessieren sich dafür, mit welcher Wahrscheinlichkeit dieses Verhalten nach der Zuckeraufnahme auftritt.&lt;/strong&gt;&lt;br&gt;
+
+c) Ist der Ereignisraum diskret oder stetig?&lt;br&gt;
+d) Bestimmen Sie Erwartungswert und Varianz der Zufallsvariablen, wenn die Wahrscheinlichkeit, dass die Ratte nach fünf Minuten hyperaktiv wird, 85% beträgt.&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+c) Ereignisraum ist &lt;u&gt;diskret&lt;/u&gt;; Es gibt nur zwei mögliche, abzählbare Ereignisse/Ausgänge: Hyperaktiv vs. Nicht-Hypaeraktiv
+&lt;br&gt;
+
+d) Wir haben eine Zufallsvariable X, die den Wert ...
+- ... X = 1 annimmt, wenn die Ratte hyperaktiv wird; &lt;br&gt;
+- ... X = 0 annimmt, wenn die Ratte nicht hyperaktiv wird. &lt;br&gt;
+
+Wir wissen: Die Wahrscheinlichkeit für X = 1 ist p = 0.85
+
+$$
+\small
+E (X) = p = 0.85
+$$
+Der Erwartungswert gibt an, wie oft wir im Durchschnitt bei vielen Versuchen "Erfolg" erwarten dürfen. Wenn wir das Experiment sehr oft wiederholen, werden im Durchschnitt 85% der Ratten hyperaktiv.
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 17
+class: top, left, smaller
+### Übungsaufgabe 4 - Lösung
+
+&lt;strong&gt;Sie untersuchen, ob das Geben eines Zuckerwürfels dazu führt, dass eine Ratte innerhalb von fünf Minuten hyperaktiv wird. Sie interessieren sich dafür, mit welcher Wahrscheinlichkeit dieses Verhalten nach der Zuckeraufnahme auftritt.&lt;/strong&gt;&lt;br&gt;
+
+e) Welche Verteilung würde man erhalten, würde das Experiment an mehreren Ratten durchgeführt werden?
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+Die Varianz Var(X) beschreibt, wie stark die einzelnen Untersuchungsergebnisse um den Erwartungswert streuen:
+
+$$
+\small
+\text{Var}(X) = p \cdot (1 - p) = 0{,}85 \cdot (1 - 0{,}85) = 0{,}85 \cdot 0{,}15 = 0{,}1275
+$$
+
+Die Varianz gibt an, wie unterschiedlich die Einzelergebnisse ausfallen können. Da es nur zwei mögliche Ergebnisse gibt (0 oder 1), ist die Varianz in diese Fall sehr gering. Je näher p and 0 oder 1 liegt, desto kleiner ist die Varianz. Am größten ist sie bei p = 0.50.
+&lt;br&gt;&lt;br&gt;
+e) Wenn das Experiment an n Ratten durchgeführt wird und jede Ratte unabhängig von den anderen entweder hyperaktiv wird oder nicht, dann ist die Verteilung &lt;u&gt;binomial&lt;/u&gt;: Zwei mögliche Ausgänge, n &gt; 1
+
+X ~ Binomial (n, p): X ist binomialverteilt mit den Parameter
+- n: Anzahl der unabhängigen Versuche (Ratten)&lt;br&gt;
+- p: Wahrscheinlichkeit für Hyperaktivität
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 18
+class: top, left, smaller
+### Übungsaufgabe 4 - Lösung
+
+&lt;strong&gt;Sie untersuchen, ob das Geben eines Zuckerwürfels dazu führt, dass eine Ratte innerhalb von fünf Minuten hyperaktiv wird. Sie interessieren sich dafür, mit welcher Wahrscheinlichkeit dieses Verhalten nach der Zuckeraufnahme auftritt.&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Bernoulli- und Binomialverteilung hängen eng miteinander zusammen:
+- Eine Bernoulli Verteilung beschreibt &lt;u&gt;einen einzigen Versuch&lt;/u&gt; mit zwei möglichen Ausgängen: Erfolg vs. Misserfolg&lt;br&gt;
+- Eine Binomialverteilung beschreibt die Gesamtheit mehrerer unabhängiger Bernoulli-Versuche
+&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 19
+class: top, left, smaller
+### Übungsaufgabe 5
+
+&lt;strong&gt;In einer Schule befinden Sich 750 Schülerinnen und Schüler. Bei 30% wurde eine depressive Symptomatik festgestellt. Der zuständige Schulpsychologe untersucht die achten Klassen mit insgesamt 123 Schülerinnen und Schülern.&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+a) Sie interessieren sich für die Wahrscheinlichkeit, dass ein bestimmter Anteil der untersuchten Schülerinnen und Schüler eine depressive Symptomatik aufweise. Was bedeutet in diesem Zusammenhang ein "Erfolg" der Zufallsvariable, und wie ist diese verteilt?&lt;br&gt;
+b) Wie groß ist die Wahrscheinlichkeit, dass genau 35 der 123 untersuchten Schülerinnen und Schüler eine depressive Symptomatik zeigt?
+
+---
+name: 20
+class: top, left, smaller
+### Übungsaufgabe 5 - Lösung
+
+&lt;strong&gt;In einer Schule befinden Sich 750 Schülerinnen und Schüler. Bei 30% wurde eine depressive Symptomatik festgestellt. Der zuständige Schulpsychologe untersucht die achten Klassen mit insgesamt 123 Schülerinnen und Schülern.&lt;/strong&gt;&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+a) "Erfolg" ist in diesem Fall, dass eine Schülerin bzw. ein Schüler eine depressive Symptomatik aufweist (das, was wir zählen; binomialverteilt). Wenn wir aus den 123 untersuchten Schülerinnen und Schülern zufällig eine Person untersuchen, ist die Zufallsvariable&lt;br&gt;
+- X = 1, wenn die Person depressiv ist ("Erfolg")
+- X = 0. wenn die Person nicht depressiv ist ("Misserfolg")
+&lt;br&gt;&lt;br&gt;
+
+b) Wir berechnen die Binomialwahrscheinlichkeit für k = 35:
+
+$$
+\small
+P(X = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k}    
+$$
+
+$$
+\small
+P(X = 35) = \binom{123}{35} \cdot 0,30^{35} \cdot (1 - 0,3)^{123 - 35} = 0,0740
+$$
+Die Wahrscheinlichkeit, dass genau 35 der 123 Schülerinnen und Schüler eine depressive Symptomatik zeigt, liegt bei 7,4%.
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 21
+class: top, left, smaller
+### Wiederholung
+&lt;br&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 4-1.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.95em; line-height: 1.5;"&gt;
+Dichtefunktion: 
+
+&lt;div style="width:100%;text-align:center;"&gt;
+$$
+\varphi(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{1}{2} \left( \frac{x-\mu}{\sigma} \right)^2 \right)
+$$
+
+&lt;br&gt;
+&lt;strong&gt;Integral über der Dichtefunktion&lt;/strong&gt; → Bestimmung von Flächen (Wahrscheinlichkeiten) unter der Normalverteilung
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+---
+name: 22
+class: top, left, smaller
+### Wiederholung
+&lt;br&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 4b-1.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.95em; line-height: 1.5;"&gt;
+Dichtefunktion: 
+
+&lt;div style="width:100%;text-align:center;"&gt;
+$$
+\varphi(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left( -\frac{1}{2} \left( \frac{x-\mu}{\sigma} \right)^2 \right)
+$$
+
+&lt;br&gt;
+&lt;strong&gt;Integral über der Dichtefunktion&lt;/strong&gt; → Bestimmung von Flächen (Wahrscheinlichkeiten) unter der Normalverteilung&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt; Einfacher: z-Standardisierung und z-Tabelle!&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
+
+→ Das aufwändige Berechnen von Integralen entfällt &lt;br&gt;
+→ Sie können die Wahrscheinlichkeiten direkt ablesen!
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+---
+name: 23
+class: top, left, smaller
+### Wiederholung
+
+&lt;br&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="Normalverteilung_Standardnormalverteilung.png" style="max-width: 80%;"&gt;
+&lt;/div&gt;
+
+&lt;div style="flex: 1.4; font-size: 0.95em; line-height: 1.5;"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Z-Transformation:
+  
+$$
+Z_i = \frac{x_i - \mu}{\sigma}
+$$
+&lt;br&gt;&lt;br&gt;
+&lt;center&gt;&lt;strong&gt;Normalverteilung → Standardnormalverteilung&lt;/strong&gt;&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+---
+name: 24
+class: top, left, smaller
+&lt;br&gt;&lt;br&gt;&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="z_Tabelle.png" style="max-width: 80%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 25
+class: top, left, smaller
+### z-Tabelle
+&lt;br&gt;
+&lt;span style="font-size: 90%;"&gt;
+- Wahrscheinlichkeit für jeden z-Wer kann abgelesen werden&lt;br&gt;
+- Zeile 1 (bis 1 Stelle nach dem Komma) und Spalte (2. Stelle nach dem Komma)&lt;br&gt;
+- Anhand der Tabelle kann abgelesen werden, wie wahrscheinlich die Werte einer Verteilung sind 
+&lt;br&gt;
+- &lt;strong&gt;Voraussetzung ist, dass die Größe selbst normalverteilt ist&lt;/strong&gt;
+&lt;br&gt;
+- Um die Standardnormalverteilungs-Tabelle nutzen zu können, brauchen Sie entweder ...
+  - ... einen gegebenen z-Wert &lt;strong&gt;oder&lt;/strong&gt; 
+  - ... eine gegebene Wahrscheinlichkeit&lt;br&gt;
+- Die Berechnung eines z-Werts kann für jeden Wert einer normalverteilten Variable erfolgen&lt;br&gt;
+- Dieser Prozess nennt sich &lt;strong&gt;z-Transformation&lt;/strong&gt; oder kurz &lt;strong&gt;Standardisierung&lt;/strong&gt;&lt;br&gt;
+- Dafür braucht man nichts weiter als den Mittelwert und die Standardabweichung der Verteilung
+&lt;br&gt;&lt;br&gt;
+
+&lt;strong&gt;Vorteil der Standardisierung:&lt;/strong&gt;&lt;br&gt;
+- Messwerte von Personen verschiedener Populationen sind oft nicht direkt vergleichbar&lt;br&gt;
+- Dennoch möchte man ausdrücken können, wie gut die beiden Leistungen innerhalb der Bezugsgruppe sind&lt;br&gt;
+&lt;/span&gt;
+
+---
+name: 26
+class: top, left, smaller
+&lt;br&gt;&lt;br&gt;&lt;center&gt;
+&lt;div style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;"&gt;
+&lt;div style="flex: 1;"&gt;
+  &lt;img src="z_Tabelle_markiert.png" style="max-width: 80%;"&gt;
+&lt;/div&gt;&lt;/center&gt;
+
+---
+name: 27
+class: top, left, smaller
+### z-Tabelle
+
+Ordnen Sie die markierten Werte in der Tabelle der letzten Folie der richtigen Visualisierung zu.
+&lt;div style="margin-top: 80px;"&gt;&lt;/div&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe z-1.png" style="display: block; margin: auto;" /&gt;
+
+&lt;/div&gt;
+
+---
+name: 28
+class: top, left, smaller
+### z-Tabelle - Lösung
+
+Ordnen Sie die markierten Werte in der Tabelle der letzten Folie der richtigen Visualisierung zu.
+&lt;div style="margin-top: 80px;"&gt;&lt;/div&gt;
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe zb-1.png" style="display: block; margin: auto;" /&gt;
+
+&lt;/div&gt;
+
+---
+name: 29
+class: top, left, smaller
+### Übungsaufgabe 6
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+
+&lt;/strong&gt;&lt;br&gt;
+a) Wie groß ist der Anteil der Männer, deren Körpergröße höchstens 1.95m beträgt?&lt;br&gt;
+b) Wie groß ist der Anteil der Männer, deren Körpergröße mehr als 1.95m beträgt?&lt;br&gt;
+c) Für welche Körpergröße liegt der Anteil der Männer, die mindestens so groß sind, knapp unter 5%?&lt;br&gt;
+d) Wie groß müsste eine Frau sein, um - bezogen auf ihre Verteilung - denselben z-Score (Abstand zum Mittelwert in Standardabweichungen) zu erreichen wie ein Mann mit 1.95m Körpergröße?
+
+---
+name: 30
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+a) Wie groß ist der Anteil der Männer, deren Körpergröße höchstens 1.95m beträgt?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+Höchstens = kleiner oder gleich, d.h. wir suchen nach P(X ≤ 1.95). Dafür müssen wir, in einem ersten Schritt, das gesuchte x = 1,95 in einen z-Wert umwandeln, wenn nur P(Z ≤ z) können wir in der Tabelle ablesen.
+&lt;br&gt;
+&lt;u&gt;1. Standardisierung (Z-Transformation):&lt;/u&gt; Die Normalverteilung wird mit der z-Transformation auf die Standardnormalverteilung (Mittelwert 0, Standardabweichung 1) gebracht.
+
+$$
+\small
+Z_i = \frac{x_i - \mu}{\sigma} = \frac{1,95 - 1,80}{0,1} = 1,5
+$$
+Das bedeutet: 1,95m liegt 1,5 Standardabweichungen über dem Mittelwert.
+&lt;br&gt;
+&lt;u&gt;Nachschlagen in der z-Tabelle:&lt;/u&gt; Nun, im zweiten Schritt, lesen wir aus der z-Tabelle den folgenden Wert ab: P(Z ≤ 1,5) = 0,9332. Das bedeutet: 93,32% der Männer sind höchstens 1,95m groß.
+&lt;br&gt;
+→ Es besteht eine 93,32%ige Wahrscheinlichkeit, dass ein zufällig ausgewählter Mann höchstens 1,95m groß ist.
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 31
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+b) Wie groß ist der Anteil der Männer, deren Körpergröße mehr als 1.95m beträgt?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+Gesucht ist P(X &gt; 1,95) = P(Z &gt; 1,5), wir können die Gegenwahrscheinlichkeit nutzen (siehe Ergebnis a))
+
+$$
+\small
+1 - P(X ≤ 1,95) = 1 - P(Z ≤ 1,5) = 1 - 0,9332 = 0,0668
+$$
+→ 6,68% der Männer sind größer als 1,95m &lt;br&gt;
+→ Die Wahrscheinlichkeit, dass ein zufällig ausgewählter Mann über 1,95m groß ist, beträgt 6,68%.
+
+&lt;br&gt;
+&lt;strong&gt;Die Standardnormalverteilung ist symmetrisch, aber: Die meisten Tabellen zeigen nur die linke Fläche unter der Kurve, also P(Z ≤ z). Wenn Sie wissen möchten, wie viel rechts von einem bestimmten z.Wert liegt, müssen Sie den Rest berechnen:
+
+$$
+\small
+P(Z &gt; z) = \text{Gesamtfläche (1) - Fläche links von } z
+$$
+
+
+&lt;/strong&gt;&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 32
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+c) Für welche Körpergröße liegt der Anteil der Männer, die mindestens so groß sind, knapp unter 5%?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+Anders formuliert: Wie groß muss ein Mann mindestens sein, um zu den größten 5% zu gehören?&lt;br&gt;
+Gesucht ist der x-Wert (Körpergröße), für den gilt: P(X ≥ x) = 0,05 bzw. P(X &lt; x) = 0,95
+&lt;br&gt;&lt;br&gt;
+Wir suchen also den 95. Perzentilwert der Verteilung. 
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Ein Perzentilwert gibt an, bis zu welchem Wert ein bestimmter Prozentsatz der Daten liegt. Der 95. Perzentilwert ist der Wert, unter dem 95% aller beobachteten Werte liegen. Oder anders gesagt: 5% der Werte sind größer als dieser Wert.&lt;/strong&gt;
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 33
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+c) Für welche Körpergröße liegt der Anteil der Männer, die mindestens so groß sind, knapp unter 5%?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;u&gt;Schritt 1: z-Wert zum 95%-Quantil bestimmen&lt;/u&gt;&lt;br&gt;
+In der z-Tabelle suchen wir den Wert, bei dem P(Z ≤ z) = 0,9505. Dieser liegt bei z = 1,65. Das bedeutet, ein Wert, der 1,65 Standardabweichungen übr dem Mittelwert liegt, hat eine Wahrscheinlichkeit von ca. 95%, unterschritten zu werden.&lt;br&gt;&lt;br&gt;
+&lt;u&gt;Schritt 2: Rückrechnung von z auf x (Originaleinheit Meter)&lt;/u&gt;&lt;br&gt;
+
+$$
+\small
+Z_i = \frac{x_i - \mu}{\sigma}
+$$
+
+$$
+\small
+Z_i \cdot \sigma = x_i - \mu
+$$
+
+$$
+\small
+x_i = Z_i \cdot \sigma + \mu = 1{,}65 \cdot 0{,}10 + 1{,}80 = 1{,}965
+$$
+
+Ein Mann muss mind. 1,97m groß sein, um zu den größten 5% zu gehören. Oder anders: Nur 5% der Männer sind größer als 1,97m.
+&lt;br&gt;
+
+&lt;/div&gt;
+&lt;/span&gt;
+
+---
+name: 34
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+c) Für welche Körpergröße liegt der Anteil der Männer, die mindestens so groß sind, knapp unter 5%?&lt;br&gt;
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+&lt;u&gt;Schritt 3: Zusatz: Untere 5%&lt;br&gt;&lt;/u&gt;
+So wie 5% der Männer größer als ein bestimmter Wert sind (oberes 5%-Perzentil), sind auch 5% der Männer kleiner als ein entsprechender Wert auf der linken Seite der Verteilung, d.h. auch bei z = - 1,65 liegt die Fläche unter der Kurve bei ca 4,95%
+
+$$
+\small
+Z_i = \frac{x_i - \mu}{\sigma}
+$$
+
+$$
+\small
+Z_i \cdot \sigma = x_i - \mu
+$$
+
+$$
+\small
+x_i = Z_i \cdot \sigma + \mu = -1{,}65 \cdot 0{,}10 + 1{,}80 = 1{,}635
+$$
+
+Nur 5% der Männer sind kleiner als 1,64m.
+&lt;br&gt;
+
+&lt;/div&gt;
+&lt;/span&gt;
+---
+name: 35
+class: top, left, smaller
+### Übungsaufgabe 6 - Lösung
+&lt;strong&gt;Für die normalverteilte Zufallsvariable „Körpergröße“ sind die Parameter für die männliche und weibliche Bevölkerung eines Landes wie folgt gegeben:
+
+$$
+\small
+\text{Männer: } \mu = 1{,}80\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m} \qquad
+\text{Frauen: } \mu = 1{,}70\,\mathrm{m},\ \sigma = 0{,}10\,\mathrm{m}
+$$
+
+&lt;/strong&gt;&lt;br&gt;
+d) Wie groß müsste eine Frau sein, um - bezogen auf ihre Verteilung - denselben z-Score (Abstand zum Mittelwert in Standardabweichungen) zu erreichen wie ein Mann mit 1.95m Körpergröße?
+
+&lt;div style="font-size: 0.95em; line-height: 1.6; color: green;"&gt;
+&lt;span style="font-size: 90%;"&gt;
+
+$$
+\small
+Z_i = \frac{x_i - \mu}{\sigma}
+$$
+$$
+\small
+1,5 = \frac{x_i - 1,70}{0,1}
+$$
+
+
+$$
+\small
+x_i - 1,70= 1,5 * 0,1 
+$$
+
+$$
+\small
+x_i = 1,5 * 0,1 + 1,70 = 1,85
+$$
+
+Eine Frau müsste 1,85m groß sein, um denselben z-Wert (1,5) zu erreichen wie ein Mann mit 1,95m.
+&lt;br&gt;
+
+---
+name: 36
+class: top, left, smaller
+### Möglichkeit der Visualisierung
+
+&lt;img src="CFH_Statistik_1_Seminar_3_Lösung_files/figure-html/Dataframe 5-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "slideNumberFormat": "%current%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

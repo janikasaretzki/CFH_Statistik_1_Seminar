@@ -1,0 +1,239 @@
+---
+title: "Zusatzaufgaben"
+subtitle: "⚔<br/>with xaringan"
+author: "Janika Saretzki"
+institute: "RStudio, PBC"
+date: "2025/05/01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "hygge"]
+    lib_dir: libs
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    seal: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(tidyverse)
+library(kableExtra)
+library(knitr)
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+library(MASS)
+library(ggpubr)
+library(xaringanthemer)
+library(xaringanExtra)
+library(pdftools)
+library(magick)
+library(scales)
+library(patchwork)
+library(latex2exp)
+library(RColorBrewer)
+library(gridExtra)
+library(grid)
+
+style_duo_accent(
+  primary_color = "#621C37",
+  secondary_color = "#EE0071",
+  background_image = "blank.png"
+)
+
+xaringanExtra::use_xaringan_extra(c("tile_view"))
+
+use_scribble(
+  pen_color = "#EE0071",
+  pen_size = 4
+  )
+
+knitr::opts_chunk$set(
+  fig.retina = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+name: 1
+class: middle, left
+<br><br><br><br><br><br><br>
+# Statistik 1
+## Seminar
+***
+### Zusatzaufgaben
+##### Janika Saretzki, MSc. 
+
+---
+name: 7
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+a) Was bedeutet es, wenn eine Person für letzte Nacht einen z-Wert von -1.90 aufweist? Wie viele Stunden hat sie geschlafen?<br>
+b) Welcher Anteil an Personen in der Population hat einen z-Wert von ≤ -1.90?<br>
+c) Wie wahrscheinlich ist es, dass eine zufällig gezogene Person aus der Verteilung einen z-Wert von ≤ -1.90 aufweist?<br>
+d) Wie viele Stunden muss eine Person letzte Nacht geschlafen haben, dass die Wahrscheinlichkeit, sie zu beobachten, gleich 2.5% ist? <strong>Hinweis: Beachten Sie, dass das sowohl bei sehr wenig als auch bei sehr viel Schlaf möglich ist! </strong><br><br>
+e) Nun wird eine Person mit einer Schlafdauer von 6.15h beobachtet, welche aus einer Population von Arbeitnehmerinnen und Arbeitnehmern stammt, bei der die Schlafdauer der letzten Nacht der folgenden Verteilung folgt: </span>
+
+$$
+\small
+\mu = 7{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+
+<span style="font-size: 90%;">
+Welchen z-Wert hat diese Person? Vergleichen Sie diesen Wert mit dem z-Wert aus Aufgabe a)!
+</span>
+
+---
+name: 8
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+a) Was bedeutet es, wenn eine Person für letzte Nacht einen z-Wert von -1.90 aufweist? Wie viele Stunden hat sie geschlafen?<br>
+
+---
+name: 9
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+b) Welcher Anteil an Personen in der Population hat einen z-Wert von ≤ -1.90?<br>
+</span>
+
+---
+name: 10
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+c) Wie wahrscheinlich ist es, dass eine zufällig gezogene Person aus der Verteilung einen z-Wert von ≤ -1.90 aufweist?<br>
+
+---
+name: 11
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+d) Wie viele Stunden muss eine Person letzte Nacht geschlafen haben, dass die Wahrscheinlichkeit, sie zu beobachten, gleich 2.5% ist? <strong>Hinweis: Beachten Sie, dass das sowohl bei sehr wenig als auch bei sehr viel Schlaf möglich ist! </strong><br><br>
+
+---
+name: 12
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+e) Nun wird eine Person mit einer Schlafdauer von 6.15h beobachtet, welche aus einer Population von Arbeitnehmerinnen und Arbeitnehmern stammt, bei der die Schlafdauer der letzten Nacht der folgenden Verteilung folgt: </span>
+
+$$
+\small
+\mu = 7{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+
+<span style="font-size: 90%;">
+Welchen z-Wert hat diese Person? Vergleichen Sie diesen Wert mit dem z-Wert aus Aufgabe a)!
+</span>
+
+---
+name: 12
+class: top, left, smaller
+### Einheit 3, Übungsaufgabe 7 - Lösung
+<strong>In einer Stichprobe von Studierenden folgt die Schlafdauer der letzten Nacht einer Normalverteilung mit den folgenden statistischen Kennwerten:
+
+$$
+\small
+\mu = 9{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+</strong><br>
+<span style="font-size: 90%;">
+e) Nun wird eine Person mit einer Schlafdauer von 6.15h beobachtet, welche aus einer Population von Arbeitnehmerinnen und Arbeitnehmern stammt, bei der die Schlafdauer der letzten Nacht der folgenden Verteilung folgt: </span>
+
+$$
+\small
+\mu = 7{.}00\,\mathrm{h}, \quad \sigma = 1{.}50\,\mathrm{h}
+$$
+
+<span style="font-size: 90%;">
+Welchen z-Wert hat diese Person? Vergleichen Sie diesen Wert mit dem z-Wert aus Aufgabe a)!
+</span>
+
+---
+name: 29
+class: top, left, smaller
+### Einheit 4, Übungsaufgabe 4
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+---
+name: 30
+class: top, left, smaller
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+---
+name: 31
+class: top, left, smaller
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+---
+name: 32
+class: top, left, smaller
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
+
+---
+name: 33
+class: top, left, smaller
+### Einheit 4, Übungsaufgabe 4 - Lösung
+Sie möchten die Wirksamkeit eines neuen Therapieansatzes zur Reduktion von Prüfungsangst untersuchen. Laut bisheriger Forschung liegt der durchschnittliche Angstwert prüfungsängstlicher Studierender bei einem standardisierten Test bei 45, bei einer bekannten Standardabweichung von 5. Um den Effekt Ihrer Intervention zu überprüfen, erheben Sie Daten von 30 Studierenden, die an Ihrem Therapieprogramm teilgenommen haben. Der Mittelwert dieser Stichprobe beträgt 42.
+
+<strong>Sie möchten nun prüfen, ob sich der mittlere Angstwert der Stichprobe <u>signifikant vom bekannten Populationswert unterscheidet,</u> wobei Sie ein Signifikanzniveau von 0,02 zugrunde legen. Formulieren Sie zunächst die Null- und Alternativhypothese (inhaltlich und statistisch).</strong>
